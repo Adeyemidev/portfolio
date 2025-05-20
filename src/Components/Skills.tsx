@@ -21,18 +21,20 @@ const Skills = (): JSX.Element => {
   return (
     <section
       id="skills"
-      className="container mx-auto py-20"
+      className="container mx-auto pb-20"
       data-aos="fade-up"
       data-aos-duration="2000"
-    >
-      <h1 className="text-[40px] mb-10 leading-[40px] tracking-[-1.14px] sm:text-[72px] sm:leading-[72px] sm:tracking-[-2.05px] md:text-extralarge md:leading-extralarge md:tracking-tight font-bold">
-        SKILLS & EXPERTISE
-      </h1>
+    >     
+    
+    <h1 className="text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px]  md:leading-extralarge md:tracking-tight font-bold">
+      SKILLS & EXPERTISE
+    </h1>
+
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
         {skillsData.map((category, index) => (
           <div key={index} className="mb-6">
-            <h2 className="text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
+            <h2 className="text-xl lg:text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
               {category.category}
             </h2>
 
@@ -70,7 +72,7 @@ const Skills = (): JSX.Element => {
       </div>
 
       <div className="mt-16 p-4 border border-gray-400 rounded-lg bg-gray-900/50" data-aos="fade-up" data-aos-duration="2000">
-        <h3 className="text-xl mb-4 text-white font-medium">Current Focus</h3>
+        <h3 className="text-xl lg:text-[24px] mb-4 text-white font-medium">Current Focus</h3>
         <p className="text-gray-50 text-sm">
           As a frontend developer, I specialize in creating high-performance, user-friendly websites using
           modern technologies like React, Next.js, and Tailwind CSS. My goal is to deliver exceptional user

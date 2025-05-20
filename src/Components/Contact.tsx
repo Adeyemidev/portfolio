@@ -74,9 +74,9 @@ const Contact = () => {
 
   return (
     <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" className='bg-darkgrey pt-8'>
-      <section id='contact' className='py-[52px] container lg:flex text-center items-center justify-center lg:justify-between'>
+      <section id='contact' className='py-[52px] container lg:flex text-center items-start justify-center lg:justify-between'>
         <div className='text-center lg:text-left pb-20'>
-          <h1 className='text-[40px] leading-[40px] tracking-[-1.14px] sm:text-[72px] sm:leading-[72px] sm:tracking-[-2.05px] md:text-extralarge md:leading-extralarge md:tracking-tight font-bold'>Contact</h1>
+          <h1 className='text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px] md:leading-extralarge md:tracking-tight font-bold'>Contact</h1>
           <p className='text-center lg:text-left text-smallest sm:text-smaller pt-6 leading-[26px] sm:leading-normal lg:max-w-[65%] max -w-md text-gray'>
             I would love to hear about your project and how I could help.
             Please fill in the form, and I'll get back to you as soon as possible.

@@ -72,8 +72,8 @@ const Projects = (): JSX.Element => {
 
   return (
     <section id="Projects" className='container mx-auto'>
-      <div className="flex justify-between  mb-6 sm:mb-16 items-center">
-        <h1 className="text-[40px] leading-[40px] tracking-[-1.14px] sm:text-[72px] sm:leading-[72px] sm:tracking-[-2.05px] md:text-extralarge md:leading-extralarge font-bold">
+      <div className="flex justify-between mb-6 items-center">
+        <h1 className="text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px] md:leading-extralarge font-bold">
           Projects
         </h1>
         <h4 className="font-bold text-smallest leading-[26px] md:leading-normal tracking-[2.29px] sendMessage">
@@ -106,12 +106,12 @@ const Projects = (): JSX.Element => {
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <p className="text-[24px] leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
+              <p className="text-xl lg:text-[24px] leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
                 {project.title}
               </p>
               <menu className="flex gap-5">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="text-gray group-hover:text-white transition-colors">
+                  <span key={tag} className="text-gray text-base group-hover:text-white transition-colors">
                     {tag}
                   </span>
                 ))}

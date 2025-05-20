@@ -20,7 +20,7 @@ const Header = () => {
       data-aos="fade-up"
       data-aos-duration="2000"
       id="head"
-      className="pt-20 md:pt-32 flex flex-col justify-center items-center text-center sm:mb-20 container mx-auto" 
+      className="h-screen flex flex-col justify-center items-center text-center container mx-auto" 
     >
       <div className="flex flex-col items-center w-full">
         <TypeAnimation
@@ -28,13 +28,14 @@ const Header = () => {
           wrapper="h1"
           speed={40}
           cursor={true}
+          className=' leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px] md:text-extralarge md:leading-extralarge font-bold'
           style={{
             fontSize: '2.270em',
             color: '#FFFFFF',
             lineHeight: '1.2',
             fontFamily: 'Blorado, sans-serif',
             textRendering: 'geometricPrecision',
-            fontWeight: '500',
+            // fontWeight: '500',
             letterSpacing: '9.9px',
             textAlign: 'center'
           }}
@@ -53,7 +54,7 @@ const Header = () => {
           smooth={true} 
           offset={-55} 
           duration={1500}
-          className="flex items-center justify-center mx-auto gap-6 mt-10 -mb-0 leading-normal tracking-[2.29px] text-center"
+          className="flex items-center justify-center mx-auto gap-3 mt-10 -mb-0 leading-normal tracking-[2.29px] text-center"
         >
           <span className="sendMessage sendMessage1 font-thin">SEE PROJECTS</span>
           <Image className="animate-bounce w-6 h-6" src={icon} alt="" />

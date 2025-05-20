@@ -27,18 +27,13 @@ export const headerData: HeaderData = {
   headline: "Hi, I'M ADEYEMI, A FRONTEND DEVELOPER.",
   paragraphs: [
     "If you're here, there's a chance you need great hands on your projects or someone who can help bring your idea to life flawlessly"
-    ],
+  ],
   services: {
-    title: "Working with me gets you:",
-    items: [
-      "A conversion-focused website that turns visitors into leads",
-      "Strategic design that highlights your unique value proposition",
-      "Technical excellence that makes your site lightning-fast and mobile-perfect",
-      "A developer who understands both code AND marketing strategy"
-    ]
+    title: "",
+    items: []
   },
   close: {
-    semi: "I'm not just a frontend developer who knows React, NextJS, and Tailwind—I'm a business partner who helps creative professionals achieve tangible results.",
+    semi: ""
   }
 };
 
