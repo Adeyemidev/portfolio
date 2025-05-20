@@ -36,8 +36,7 @@
  letter-spacing: -1.5px;
  }
  
- #Projects #Skills span{
-   font-size: 18px;
+ #Projects  span{
    font-weight: 500;
    line-height: 28px;
    letter-spacing: 0px;
@@ -49,7 +48,6 @@
  }
   
  menu span{   
-  font-size: 18px;
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0px;
@@ -70,17 +68,6 @@
  } 
  
  .sendMessage1::after{width: 99%;
- }
-   
- @media (width < 500px) {
- 
-    #Skills h2{
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 40px;
-    letter-spacing: -1px;
-    }
-    
  }
    
  

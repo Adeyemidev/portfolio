@@ -17,13 +17,21 @@ const Skills = (): JSX.Element => {
   
   const [progressValues, setProgressValues] = useState<{ [key: string]: number }>({});
   
+  // Function to determine gradient color based on proficiency
+  const getProgressColor = (proficiency: number) => {
+    if (proficiency >= 90) return 'from-emerald-500 to-teal-400'; // High proficiency
+    if (proficiency >= 80) return 'from-blue-500 to-indigo-400'; // Good proficiency
+    if (proficiency >= 70) return 'from-violet-500 to-purple-400'; // Medium proficiency
+    return 'from-amber-500 to-orange-400'; // Lower proficiency
+  };
 
   return (
     <section
       id="skills"
       className="container mx-auto pb-20"
-      data-aos="fade-up"
-      data-aos-duration="2000"
+      //  data-aos="zoom-in"
+      // data-aos-anchor-placement="top-center"
+      // data-aos-duration="2000"
     >     
     
     <h1 className="text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px]  md:leading-extralarge md:tracking-tight font-bold">
@@ -31,10 +39,15 @@ const Skills = (): JSX.Element => {
     </h1>
 
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+      <div
+      data-aos="zoom-in-up"
+            data-aos-duration="1500"
+            rel="noopener noreferrer"
+    
+      className=" group grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
         {skillsData.map((category, index) => (
           <div key={index} className="mb-6">
-            <h2 className="text-xl lg:text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
+            <h2 className="text-sm lg:text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
               {category.category}
             </h2>
 
@@ -50,17 +63,16 @@ const Skills = (): JSX.Element => {
 
 
               <div className="flex items-center w-full">
-                    <div className="flex-1 mr-3 rounded-full bg-[rgba(255, 255, 255, 0.1)]  border"  >
-                      <Progress 
-                        value={skill.proficiency || 0}
-                        className="h-2 w-full" 
-                      />
+                    <div className="flex-1 mr-3 h-3 rounded-full  overflow-hidden border border-gray-700 shadow-inner">
+                      <div 
+                        className="h-full bg-[#4EE1A0] [#2ECC71] rounded-full" 
+                        style={{ width: `${skill.proficiency || 0}%` }}
+                      ></div>
                     </div>
-                    <span className="text-sm text-gray-400">
-                    {skill.proficiency || 0}
+                    <span className="text-sm font-medium text-white">
+                      {skill.proficiency || 0}
                     </span>
                   </div>
-
 
 
                   <p className="text-sm text-gray">{skill.description}</p>
@@ -83,4 +95,3 @@ const Skills = (): JSX.Element => {
   );
 };
 export default Skills
-
