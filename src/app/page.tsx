@@ -7,7 +7,7 @@ import Projects from "@/Components/Projects";
 const Home = ()=>{
   return(<>
     
-    <main className="min-h-screen App ">
+    <main className="min-h-scree n App ">
       <NavBar />
       <Header />
       <Skills />
