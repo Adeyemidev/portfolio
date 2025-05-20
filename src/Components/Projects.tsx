@@ -98,7 +98,7 @@ const Projects = (): JSX.Element => {
             className="group"
           >
             <div>
-              <div className="relative w-full rounded-lg h-[300px] overflow-hidden">
+              <div className="relative w-full rounded-lg h-[200px] lg:h-[300px] overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}

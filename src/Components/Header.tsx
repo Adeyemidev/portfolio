@@ -16,8 +16,13 @@ const Header = () => {
   }, []);
     
   return (
-    <main data-aos="fade-up" data-aos-duration="2000" id='head' className="pt-20 md:pt-32 container mx-auto sm:mb-20 items-center">
-      <div>
+    <main
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      id="head"
+      className="pt-20 md:pt-32 flex flex-col justify-center items-center text-center sm:mb-20 container mx-auto" 
+    >
+      <div className="flex flex-col items-center w-full">
         <TypeAnimation
           sequence={[headerData.headline]}
           wrapper="h1"
@@ -30,55 +35,32 @@ const Header = () => {
             fontFamily: 'Blorado, sans-serif',
             textRendering: 'geometricPrecision',
             fontWeight: '500',
-            letterSpacing: '9.9px'
+            letterSpacing: '9.9px',
+            textAlign: 'center'
           }}
         />
         
         {headerData.paragraphs.map((paragraph, index) => (
-          <p key={index} className='md:max-w-5xl mt-6 text-gray'>
+          <p key={index} className="md:max-w-xl mt-6 mx-auto text-gray text-center">
             {paragraph}
           </p>
         ))}
         
-        <h1 className="mt-8 text-xl font-semibold text-white">{headerData.services.title}</h1>
-        <ul className="mt-4 space-y-2">
-          {headerData.services.items.map((item, index) => (
-            <li key={index} className="flex items-start text-gray">
-              <span className="mr-2">•</span>
-              <p>{item}</p>
-            </li>
-          ))}
-        </ul>
-        
-        
-          <p className='md:max-w-5xl mt-6 text-gray'> 
-            I'm not just a frontend developer who knows React, NextJS, 
-         and Tailwind—I'm a business partner who helps creative professionals
-          achieve tangible results. </p>
-         
-
-        
-       <div className='lg:flex gap-2 items-center md:max-w-5xl mt-6 text-gray'>
-          <p >
-          Ready to build a website that actually works for your business?          
-          </p>
-          <a className='font-bold text-base' href="mailto:easycode.techdev@gmail.com">
-             KINDLY CONTACT ME</a>
-
-         </div>
      
         <Link 
-          to='Projects'
+          to="Projects"
           spy={true} 
           smooth={true} 
           offset={-55} 
           duration={1500}
-          className='flex items-center gap-6 mt-10 -mb-0 leading-normal tracking-[2.29px]'
+          className="flex items-center justify-center mx-auto gap-6 mt-10 -mb-0 leading-normal tracking-[2.29px] text-center"
         >
-          <span className='sendMessage sendMessage1 font-thin'>SEE PROJECTS</span>
-          <Image className="animate-bounce w-6 h-6 ..." src={icon} alt="" />
+          <span className="sendMessage sendMessage1 font-thin">SEE PROJECTS</span>
+          <Image className="animate-bounce w-6 h-6" src={icon} alt="" />
         </Link>
       </div>
     </main>
   );
-}; export default Header;
+};
+
+export default Header;

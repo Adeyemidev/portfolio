@@ -10,12 +10,6 @@ import { skillsData } from './utils/data'
 import { Progress } from './ui/progress'
 
 
-interface Skill {
-  name: string
-  experience: string
-}
-
-
 const Skills = (): JSX.Element => {
   useEffect(() => {
     Aos.init();
@@ -23,25 +17,7 @@ const Skills = (): JSX.Element => {
   
   const [progressValues, setProgressValues] = useState<{ [key: string]: number }>({});
   
-  // useEffect(() => {
-  //   const newProgressValues: { [key: string]: number } = {};
-  //   const timer = setTimeout(() => {
-  //     const values = {};
-      
-  //     skillsData.forEach(category => {
-  //       category.skills.forEach(skill => {
-  //         // Calculate proficiency - you can adjust this formula
-  //         // This example converts years to percentage (max 5 years = 100%)
-  //         // Or use explicit proficiency values if available in your data
-  //         values[skill.name] = skill.proficiency || Math.min(skill.years * 20, 100);
-  //       });
-  //     });
-      
-  //     setProgressValues(values);
-  //   }, 500);
-    
-  //   return () => clearTimeout(timer);
-  // }, []);
+
   return (
     <section
       id="skills"
@@ -93,12 +69,13 @@ const Skills = (): JSX.Element => {
         ))}
       </div>
 
-      <div className="mt-16 p-6 border border-gray-400 rounded-lg bg-gray-900/50" data-aos="fade-up" data-aos-duration="2000">
+      <div className="mt-16 p-4 border border-gray-400 rounded-lg bg-gray-900/50" data-aos="fade-up" data-aos-duration="2000">
         <h3 className="text-xl mb-4 text-white font-medium">Current Focus</h3>
-        <p className="text-gray-400">
-          I'm currently expanding my expertise in headless WordPress with Next.js, modern frontend technologies,
-          and performance optimization techniques to build faster, more engaging websites for my clients.
-        </p>
+        <p className="text-gray-50 text-sm">
+          As a frontend developer, I specialize in creating high-performance, user-friendly websites using
+          modern technologies like React, Next.js, and Tailwind CSS. My goal is to deliver exceptional user
+          experiences while ensuring that the websites I build are fast, responsive, and easy to maintain.
+       </p>
       </div>
     </section>
   );

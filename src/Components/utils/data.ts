@@ -24,12 +24,10 @@ interface SkillCategory {
 }
 
 export const headerData: HeaderData = {
-  headline: "Are you tired of websites that look good but fail to convert visitors into customers?",
+  headline: "Hi, I'M ADEYEMI, A FRONTEND DEVELOPER.",
   paragraphs: [
-    "Every day, businesses spend thousands on beautiful websites that gather digital dust. You've tried redesigns, different platforms, and maybe even hired other developers—but the results never seem to match the investment.",
-    "I transform underperforming websites into powerful lead generation tools for creative brands and businesses.",
-    "When Jane from CreativeCo came to me last year, her stunning portfolio was getting compliments but not clients. Within 3 months of our redesign, her inquiry rate tripled and her booking calendar filled up for the first time ever—without increasing her ad spend."
-  ],
+    "If you're here, there's a chance you need great hands on your projects or someone who can help bring your idea to life flawlessly"
+    ],
   services: {
     title: "Working with me gets you:",
     items: [
