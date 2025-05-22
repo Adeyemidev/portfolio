@@ -71,7 +71,7 @@ const Projects = (): JSX.Element => {
   }, [])
 
   return (
-    <section id="Projects" className='container mx-auto'>
+    <section id="Projects" className='container pt-32 mx-auto'>
       <div className="flex justify-between mb-6 items-center">
         <h1 className="text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px] md:leading-extralarge font-bold">
           Projects

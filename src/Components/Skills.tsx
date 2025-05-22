@@ -28,16 +28,14 @@ const Skills = (): JSX.Element => {
   return (
     <section
       id="skills"
-      className="container mx-auto pb-20"
-      //  data-aos="zoom-in"
+      className="container mx-auto"
+      // data-aos="zoom-in"
       // data-aos-anchor-placement="top-center"
       // data-aos-duration="2000"
-    >     
-    
+    >      
     <h1 className="text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px]  md:leading-extralarge md:tracking-tight font-bold">
-      SKILLS & EXPERTISE
+       SKILLS & EXPERTISE
     </h1>
-
 
       <div
       data-aos="zoom-in-up"
@@ -46,8 +44,8 @@ const Skills = (): JSX.Element => {
     
       className=" group grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
         {skillsData.map((category, index) => (
-          <div key={index} className="mb-6">
-            <h2 className="text-sm lg:text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
+          <div key={index}>
+            <h2 className="text-base lg:text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 hover:text-green transition-colors">
               {category.category}
             </h2>
 
