@@ -45,7 +45,7 @@ const Skills = (): JSX.Element => {
       className=" group grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
         {skillsData.map((category, index) => (
           <div key={index}>
-            <h2 className="text-base lg:text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 hover:text-green transition-colors">
+            <h2 className="text-base lg:text-[24px] border-b border-gray-800 mb-5 leading-medium font-medium pt-5 pb-2 text-green transition-colors">
               {category.category}
             </h2>
 
