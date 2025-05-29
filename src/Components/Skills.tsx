@@ -18,20 +18,18 @@ const Skills = (): JSX.Element => {
   const [progressValues, setProgressValues] = useState<{ [key: string]: number }>({});
   
   // Function to determine gradient color based on proficiency
-  const getProgressColor = (proficiency: number) => {
-    if (proficiency >= 90) return 'from-emerald-500 to-teal-400'; // High proficiency
-    if (proficiency >= 80) return 'from-blue-500 to-indigo-400'; // Good proficiency
-    if (proficiency >= 70) return 'from-violet-500 to-purple-400'; // Medium proficiency
-    return 'from-amber-500 to-orange-400'; // Lower proficiency
-  };
+  // const getProgressColor = (proficiency: number) => {
+  //   if (proficiency >= 90) return 'from-emerald-500 to-teal-400'; // High proficiency
+  //   if (proficiency >= 80) return 'from-blue-500 to-indigo-400'; // Good proficiency
+  //   if (proficiency >= 70) return 'from-violet-500 to-purple-400'; // Medium proficiency
+  //   return 'from-amber-500 to-orange-400'; // Lower proficiency
+  // };
 
   return (
     <section
       id="skills"
       className="container mx-auto"
-      // data-aos="zoom-in"
-      // data-aos-anchor-placement="top-center"
-      // data-aos-duration="2000"
+ 
     >      
     <h1 className="text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px]  md:leading-extralarge md:tracking-tight font-bold">
        SKILLS & EXPERTISE
@@ -61,14 +59,14 @@ const Skills = (): JSX.Element => {
 
 
               <div className="flex items-center w-full">
-                    <div className="flex-1 mr-3 h-3 rounded-full  overflow-hidden border border-gray-700 shadow-inner">
+                    <div className="flex-1 mr-3 h-2 lg:h-2.5 rounded-full text-base overflow-hidden border border-gray-700 shadow-inner">
                       <div 
-                        className="h-full bg-[#4EE1A0] [#2ECC71] rounded-full" 
+                        className="h-full bg-[#4EE1A0] rounded-full" 
                         style={{ width: `${skill.proficiency || 0}%` }}
                       ></div>
                     </div>
-                    <span className="text-sm font-medium text-white">
-                      {skill.proficiency || 0}
+                    <span className="text-xs font-medium text-white">
+                      {skill.proficiency || 0}%
                     </span>
                   </div>
 
