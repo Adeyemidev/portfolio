@@ -20,7 +20,7 @@ const Header = () => {
       data-aos="fade-up"
       data-aos-duration="2000"
       id="head"
-      className="-mt- 20 lg:-mt -0 h-80 h-screen flex flex-col justify-center items-center text-center container mx-auto" 
+      className="-mt- 20 lg:-mt -0 h-80 lg:h-screen flex flex-col justify-center items-center text-center container mx-auto" 
     >
       <div className="flex flex-col items-center w-full">
         <TypeAnimation
