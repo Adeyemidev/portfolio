@@ -153,7 +153,7 @@ const Contact = () => {
 
         <ul className="md:gap-4 mt-5 md:mt-0 items-center md:mr-8 grid grid-flow-col mx-20 sm:mx-0 place-items-center">
           <li>
-            <a href="https://linkedin.com/in/adeyemi-frontend-dev" aria-label="LinkedIn Profile" className="hover:text-gray transition-colors">
+            <a href="https://linkedin.com/in/adeyemi-moses1" aria-label="LinkedIn Profile" className="hover:text-gray transition-colors">
               <FaLinkedin size={26} />
             </a>
           </li>
