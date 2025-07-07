@@ -47,7 +47,7 @@ export const skillsData = [
     skills: [
       { name: "React / Next.js", proficiency: 90, description: "Building interactive web applications" },
       { name: "TypeScript", proficiency: 80, description: "Static type checking and code reliability" },
-      { name: "CSS / Tailwind CSS / shadcn/ui", proficiency: 95, description: "Modern styling and component libraries" }
+      { name: "CSS / Tailwind CSS / shadcn", proficiency: 95, description: "Modern styling and component libraries" }
     ]
   },
   {
@@ -63,7 +63,7 @@ export const projects = [
   {
     id: 'crowdlaunch',
     title: 'CROWDLAUNCH',
-    image: '/images/CROWDFUND.png',
+    image: '/images/crowdfund.png',
     link: 'https://crowdlaunch.vercel.app/',
     tags: ['TYPESCRIPT', 'REACT', 'TAILWINDCSS']
   },
