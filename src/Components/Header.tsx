@@ -20,15 +20,16 @@ const Header = () => {
     const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest'
       });
+  scrollToSection(sectionId);
     }
   };
   return ( 
-
 
       //    {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative px-6 pt-20">
@@ -55,16 +56,13 @@ const Header = () => {
            <div className="flex flex-col sm:flex-row mt-5 gap-4 justify-center items-center ">
              
           <button className="group border bg-white from-green-400 to-blue-500 px-8 py-4 rounded-full font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"> 
-           {/* <Link to="projects" onClick={scrollToSection} >
-             <span className="flex items-center gap-2">View My Work <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-             </span>
-           </Link> */}
+          
 
            <Link to="projects" onClick={() => scrollToSection("projects")}>
-  <span className="flex items-center gap-2">
-    View My Work <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-  </span>
-  
+             <span className="flex items-center gap-2">
+               View My Work <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+             </span>
+
 </Link>
            </button>
        

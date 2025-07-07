@@ -152,7 +152,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  className="border bg-white from-green-400 to-blue-500 px-8 py-4 rounded-full font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
                 >
                   {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
                 </button>
@@ -168,22 +168,22 @@ const Contact = () => {
               EasyCode
             </h3>
             
-            <div className="flex space-x-6">
+            <div className="flex space-x-6 items-center">
               <a href="https://linkedin.com/in/adeyemi-moses1" 
                  className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
-                <FaLinkedin size={24} />
+                <FaLinkedin className='w-5 h-8' />
               </a>
               <a href="mailto:adeyemiezekiel26@gmail.com" 
                  className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
-                <IoMdMail size={24} />
+                <IoMdMail className='w-5 h-8' />
               </a>
-              <a href="https://github.com" 
+              <a href="https://github.com/adeyemie" 
                  className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
-                <FaGithub size={24} />
+                <FaGithub className='w-5 h-8' />
               </a>
               <a href="https://x.com/easycode01" 
                  className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
-                <BsTwitterX size={24} />
+                <BsTwitterX  className='w-5 h-8' />
               </a>
             </div>
           </div>
