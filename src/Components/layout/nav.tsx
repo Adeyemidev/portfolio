@@ -1,20 +1,83 @@
 import { IoMdMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
-import { BsTwitterX } from "react-icons/bs";
+import { useState,useEffect, MouseEvent } from "react";
+import { usePageLoad } from "@/hook";
+import Link from "next/link";
+// NavBar Component
+export default function NavBar () {
+ 
+  const navItems = [
+    { label: "Projects", link: "projects" },
+    { label: "Contact", link: "contact" },
+    { label: "About", link: "about" }
+  ];
+  
+const { isLoaded } = usePageLoad(); 
 
-export const NavBar = (): JSX.Element => {
-  return (
-    <>
-      <nav className="relative container mx-auto sm:flex sm:justify-between pt-8 text-center sm:text-left items-center">
-        <h3 className="text-small sm:text-medium font-medium leading-medium tracking-small">EasyCode</h3>
-        <ul className="md:gap-7 mt-10 md:mt-0 items-center grid grid-flow-col mx-20 sm:mx-0 place-items-center">
-          <a href="https://linkedin.com/in/adeyemi-frontend-dev"> <FaLinkedin size={26}/></a>
-          <a href="mailto:adeyemiezekiel26@gmail.com"> <IoMdMail size={26}/></a>
-          <a href="https://github.com">  <FaGithub size={26}/></a>
-          <a href="https://x.com/easycode01?t=XbtFtZ4qzl97gErjSosZsQ&s=09" ><BsTwitterX size={26}/></a>
-        </ul>
-      </nav>
-    </>
-  )
-} 
+
+const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  };
+ // Handle click with smooth scrolling
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement, MouseEvent>, sectionId: string) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
+return (
+  <nav className={`fixed top-0 w-full z-50 transition-all duration-700 
+      ${isLoaded ? 'translate-y-0' : '-translate-y-full'}
+    `}>
+ 
+         <div className="backdrop-blur-md bg-slate-900/80   max-w-7xl  mx-auto px-6">
+           <div className=" py-4 border-b shadow-md border-white/20"  >
+             <div className="flex justify-between items-center">
+              
+              <Link href="/">
+
+               <div className="text-4 xl font-semibold  bg-clip- text " style={{fontSize:"18px"}}>
+                 EasyCode
+               </div>
+              </Link>
+               <div className="hidden md:flex space-x-8">
+
+               {navItems.map((item) => (
+                <a 
+                  key={item.label} 
+                  href={`#${item.link}`}
+                  onClick={(e) => handleNavClick(e, item.link)}
+                  className="text-slate-300 hover:text-white transition-colors relative group cursor-pointer"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              ))}
+              
+            </div>
+               <div className="flex space-x-4 items-center">
+                <Link href="github.com/Ezekiel26" target="_blank">
+                  <FaGithub className="w-5 h-8 text-slate-400 hover:text-white cursor-pointer transition-colors" />
+                </Link>
+
+                <Link href="https://www.linkedin.com/in/adeyemi-ezekiel-o" target="_blank">
+                 <FaLinkedin className="w-5 h-8 text-slate-400 hover:text-white cursor-pointer transition-colors" />
+                </Link>
+
+                <Link href="mailto:adeyemiezekiel26@gmail.com" target="_blank">
+                  <IoMdMail className="w-5 h-8 text-slate-400 hover:text-white cursor-pointer transition-colors" />
+                </Link>
+               </div>
+             </div>
+           </div>
+         </div>
+       </nav>
+  );
+};

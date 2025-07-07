@@ -1,35 +1,45 @@
-
-
 "use client"
 
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import * as yup from 'yup';
 import { IoMdMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
-import net from '../../public/images/net.png';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import Image from 'next/image';
 import { useForm } from 'react-hook-form';
+import useIntersectionObserver from '@/hook';
+import { toast } from 'react-toastify';
+
+
+interface FormData {
+  Name: string;
+  Email: string;
+  Message: string;
+}
 
 const Contact = () => {
+  const [ref, isVisible] = useIntersectionObserver();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
 
-  interface FormData {
-    Name: string;
-    Email: string;
-    Message: string;
-  }
+  const schema = yup.object().shape({
+    Name: yup.string().required('Name is required'),
+    Email: yup.string().email('Please enter a valid email').required('Email is required'),
+    Message: yup.string().required('Message is required')
+  });
+
+  const { 
+    register, 
+    handleSubmit, 
+    reset,
+    formState: { errors } 
+  } = useForm<FormData>({
+    resolver: yupResolver(schema)
+  });
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    setSubmitSuccess(false);
-    setSubmitError(false);
+    
     try {
       const response = await fetch('https://formspree.io/f/mdkggogq', {
         method: 'POST',
@@ -40,141 +50,146 @@ const Contact = () => {
       });
       
       if (response.ok) {
-        setSubmitSuccess(true);
-        reset(); 
+        toast.success('Thank you! Your message has been sent successfully.', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        reset();
       } else {
-        setSubmitError(true);
+        toast.error('Failed to send message. Please try again.', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       }
     } catch (error) {
-      setSubmitError(true);
+      toast.error('Sorry, there was an error sending your message. Please try again.', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       console.error('Form submission error:', error);
     } finally {
       setIsSubmitting(false);
     }
   };
-       
-  const schema = yup.object().shape({
-    Name: yup.string().required('Name is required'),
-    Email: yup.string().email('Please enter a valid email').required('Email is required'),
-    Message: yup.string().required('Message is required')
-  });
-      
-  const { 
-    register, 
-    handleSubmit, 
-    reset,
-    formState: { errors } 
-  } = useForm({
-    resolver: yupResolver(schema)
-  });
-
-  useEffect(() => {
-    Aos.init();
-  }, []);
 
   return (
-    <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" className='bg-darkgrey pt-8'>
-      <section id='contact' className='py-[52px] container lg:flex text-center items-start justify-center lg:justify-between'>
-        <div className='text-center lg:text-left pb-20'>
-          <h1 className='text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px] md:leading-extralarge md:tracking-tight font-bold'>Contact</h1>
-          <p className='text-center lg:text-left text-smallest sm:text-smaller pt-6 leading-[26px] sm:leading-normal lg:max-w-[65%] max -w-md text-gray'>
-            I would love to hear about your project and how I could help.
-            Please fill in the form, and I'll get back to you as soon as possible.
-          </p>
+    <section id='contact' className="py-20 relative">
+      <div className="absolute"></div>
+      
+      <div ref={ref} className="container mx-auto px-6 relative z-10">
+        <div className="lg:flex items-start justify-between gap-16">
+          <div className={`lg:w-1/2 mb-12 lg:mb-0 transform transition-all duration-1000 ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg- gradient-to-r from -blue-400 to- cyan-400 bg-clip- text text -transparent">
+              Contact
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+              I would love to hear about your project and how I could help.
+              Please fill in the form, and I'll get back to you as soon as possible.
+            </p>
+          </div>
+
+          <div className={`lg:w-1/2 transform transition-all duration-1000 delay-300 ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  {...register('Name')}
+                  className={`w-full bg-transparent border-b-2 ${
+                    errors.Name ? 'border-red-500' : 'border-gray-700 focus:border-blue-400'
+                  } pb-3 text-white placeholder-gray-400 transition-colors duration-300 focus:outline-none`}
+                />
+                {errors.Name && (
+                  <p className="text-red-400 text-sm mt-1">{errors.Name.message}</p>
+                )}
+              </div>
+
+              <div className="relative">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  {...register('Email')}
+                  className={`w-full bg-transparent border-b-2 ${
+                    errors.Email ? 'border-red-500' : 'border-gray-700 focus:border-blue-400'
+                  } pb-3 text-white placeholder-gray-400 transition-colors duration-300 focus:outline-none`}
+                />
+                {errors.Email && (
+                  <p className="text-red-400 text-sm mt-1">{errors.Email.message}</p>
+                )}
+              </div>
+
+              <div className="relative">
+                <textarea
+                  placeholder="Project details"
+                  {...register('Message')}
+                  rows={4}
+                  className={`w-full bg-transparent border-b-2 ${
+                    errors.Message ? 'border-red-500' : 'border-gray-700 focus:border-blue-400'
+                  } pb-3 text-white placeholder-gray-400 transition-colors duration-300 focus:outline-none resize-none`}
+                />
+                {errors.Message && (
+                  <p className="text-red-400 text-sm mt-1">{errors.Message.message}</p>
+                )}
+              </div>
+
+              <div className="text-right">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
-        <div className="text-right w-full lg:w-auto">
-          {submitSuccess && (
-            <div className="text-green-500 mb-4 text-left">
-              Thank you! Your message has been sent successfully.
+        {/* Footer */}
+        <div className="mt-20 pt-8 border-t border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <h3 className="text-2xl font-bold">
+              EasyCode
+            </h3>
+            
+            <div className="flex space-x-6">
+              <a href="https://linkedin.com/in/adeyemi-moses1" 
+                 className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                <FaLinkedin size={24} />
+              </a>
+              <a href="mailto:adeyemiezekiel26@gmail.com" 
+                 className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                <IoMdMail size={24} />
+              </a>
+              <a href="https://github.com" 
+                 className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                <FaGithub size={24} />
+              </a>
+              <a href="https://x.com/easycode01" 
+                 className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                <BsTwitterX size={24} />
+              </a>
             </div>
-          )}
-          
-          {submitError && (
-            <div className="text-red-500 mb-4 text-left">
-              There was a problem sending your message. Please try again.
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit(onSubmit)} className="outline-none">
-            <div className='mb-6 text-left'> 
-              <input 
-                type='text' 
-                placeholder="Name"
-                className="border-b w-full md:px-4 lg:px-0 pb-4 bg-transparent focus:outline-none focus:border-white transition-colors"
-                {...register("Name")}
-              />
-              {errors.Name && (
-                <span className="text-red-500 text-sm block mt-1">{errors.Name.message}</span>
-              )}
-            </div>
-
-            <div className='mb-6 text-left'>
-              <input 
-                type='email' 
-                placeholder="Email" 
-                className="border-b w-full md:px-4 lg:px-0 py-4 bg-transparent focus:outline-none focus:border-white transition-colors" 
-                {...register("Email")}
-              />
-              {errors.Email && (
-                <span className="text-red-500 text-sm block mt-1">{errors.Email.message}</span>
-              )}
-            </div>
-
-            <div className='mb-6 text-left'>
-              <textarea 
-                placeholder="Project details" 
-                className="border-b w-full lg:w-96 md:px-4 lg:px-0 py-4 bg-transparent focus:outline-none focus:border-white transition-colors min-h-[100px]" 
-                {...register("Message")}
-
-              />
-              {errors.Message && (
-                <span className="text-red-500 text-sm block mt-1">{errors.Message.message}</span>
-              )}
-            </div>
-
-            <div className="text-right">
-              <button 
-                type="submit" 
-                disabled={isSubmitting}
-                className='font-bold text-[16px] leading-normal tracking-[2.29] py-4 sendMessage hover:text-gray transition-colors disabled:opacity-50'
-              >
-                {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
-      </section>
-      
-      <Image id='imageNet' src={net} alt="Network background" />
-      
-      <nav id="nav" className="container sm:flex sm:justify-between pt-8 mb-0 pb-20 border-t text-center sm:text-left items-center">
-        <h3 className="text-small sm:text-medium font-medium leading-medium tracking-small">EasyCode</h3>
-
-        <ul className="md:gap-4 mt-5 md:mt-0 items-center md:mr-8 grid grid-flow-col mx-20 sm:mx-0 place-items-center">
-          <li>
-            <a href="https://linkedin.com/in/adeyemi-moses1" aria-label="LinkedIn Profile" className="hover:text-gray transition-colors">
-              <FaLinkedin size={26} />
-            </a>
-          </li>
-          <li>
-            <a href="mailto:adeyemiezekiel26@gmail.com" aria-label="Email Contact" className="hover:text-gray transition-colors">
-              <IoMdMail size={26} />
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com" aria-label="GitHub Profile" className="hover:text-gray transition-colors">
-              <FaGithub size={26} />
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/easycode01?t=XbtFtZ4qzl97gErjSosZsQ&s=09" aria-label="Twitter Profile" className="hover:text-gray transition-colors">
-              <BsTwitterX size={26} />
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      </div>
+    </section>
   );
 };
 

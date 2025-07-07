@@ -1,127 +1,65 @@
 'use client'
+import useIntersectionObserver from '@/hook'
+import { BsArrowRight } from 'react-icons/bs'
+import { projects } from '../utils/data'
 
-import Image from 'next/image'
-import Aos from 'aos'
-import { useEffect } from 'react'
-import 'aos/dist/aos.css'
 
-interface Project {
-  id: string
-  title: string
-  image: string
-  link: string
-  tags: string[]
-}
-
-const projects: Project[] = [
-  {
-    id: 'crowdlaunch',
-    title: 'CROWDLAUNCH',
-    image: '/images/crowdfund.png',
-    link: 'https://crowdlaunch.vercel.app/',
-    tags: ['TYPESCRIPT', 'REACT', 'TAILWINDCSS']
-  },
-  {
-    id: 'gcms',
-    title: 'GCMS Website',
-    image: '/images/GCMS.png',
-    link: '/',
-    tags: ['REACTJS', 'TAILWINDCSS', 'EXPRESSJS']
-  },
-  {
-    id: 'cryptix',
-    title: 'CRYPTIX',
-    image: '/images/cryptix.png',
-    link: 'https://www.cryptixnft.io/',
-    tags: ['SVELTEJS', 'NEXTJS', 'SMART CONTRACT']
-  },
-  {
-    id: 'countries',
-    title: 'REST COUNTRIES API',
-    image: '/images/RestApi.png',
-    link: 'https://countries-apis-adeyemi.netlify.app/',
-    tags: ['JAVASCRIPT', 'REACT', 'CSS']
-  },
-  {
-    id: 'audiophile',
-    title: 'AUDIOPHILE',
-    image: '/images/audiophile.png',
-    link: 'https://audiophilic.vercel.app/',
-    tags: ['JAVASCRIPT', 'TAILWINDCSS', 'REACT']
-  },
-  {
-    id: 'designo',
-    title: 'DESIGNO',
-    image: '/images/Designo.png',
-    link: 'https://designo-ade.netlify.app/',
-    tags: ['REACT', 'CSS', 'JAVASCRIPT']
-  },
-  {
-    id: 'sunnyside',
-    title: 'SUNNY-SIDE',
-    image: '/images/sunnyside.png',
-    link: 'https://adeyemi-sunny-side.netlify.app/',
-    tags: ['HTML', 'CSS', 'JAVASCRIPT']
-  }
-]
-
-const Projects = (): JSX.Element => {
-  useEffect(() => {
-    Aos.init()
-  }, [])
+import React from 'react';
+export default function Projects(){
+  const [setRef, isVisible]= useIntersectionObserver();
 
   return (
-    <section id="Projects" className='container pt-32 mx-auto'>
-      <div className="flex justify-between mb-6 items-center">
-        <h1 className="text-[2.270em] leading-[40px] tracking-[-1.14px] sm:leading-[72px] sm:tracking-[-2.05px] md:leading-extralarge font-bold">
-          Projects
-        </h1>
-        <h4 className="font-bold text-smallest leading-[26px] md:leading-normal tracking-[2.29px] sendMessage">
-          <a 
-            href="mailto:easycode.techdev@gmail.com"
-            className="hover:text-green transition-colors"
-          >
-            CONTACT ME
-          </a>
-        </h4>
-      </div>
+    <section id='projects' className="py-20 bg- gradient-to-b from- gray-800 to-gray -900 relative overflow-hidden">
+      <div className="absolute inset-0 "></div>
+      
+      <div ref={setRef} className="container mx-auto px-6 relative z-10">
+        <div className={`text-center mb-16 transform transition-all duration-1000 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}>
+          
+          <p className=" text-white py-3 rounded-full font-semibold transition-all duration-300 transform ">
+            PROJECTS
+          </p>
+        </div>
 
-      <div className="grid sm:grid-cols-2 gap-y-10 gap-10 pb-28">
-        {projects.map((project) => (
-          <a
-            key={project.id}
-            data-aos="zoom-in-up"
-            data-aos-duration="1000"
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group"
-          >
-            <div>
-              <div className="relative w-full rounded-lg h-[200px] lg:h-[300px] overflow-hidden">
-                <Image
-                  src={project.image}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div key={project.id} className={`group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl border-white/20 hover:border-purple-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`} style={{ transitionDelay: `${index * 100}ms` }}>
+              <div className="relative overflow-hidden">
+                <img 
+                  src={project.image} 
                   alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <p className="text-xl lg:text-[24px] leading-medium font-medium pt-5 pb-2 group-hover:text-green transition-colors">
-                {project.title}
-              </p>
-              <menu className="flex gap-5">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-gray text-base group-hover:text-white transition-colors">
-                    {tag}
-                  </span>
-                ))}
-              </menu>
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">
+                  {project.title}
+                </h3>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs font-medium border border-purple-500/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <a 
+                  href={project.link}
+                  className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition-colors group-hover:translate-x-2 transform duration-300"
+                >
+                  View Project <BsArrowRight className="ml-2" />
+                </a>
+              </div>
             </div>
-          </a>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
-  )
-}
-
-export default Projects 
+  );
+};
