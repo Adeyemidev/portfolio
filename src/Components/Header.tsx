@@ -1,20 +1,12 @@
-
 "use client"
 
-import { useEffect } from 'react'; 
-import Aos from 'aos'; 
 import { Link } from 'react-scroll';
-import { TypeAnimation } from 'react-type-animation'; 
-import { headerData } from '../utils/data'; 
-import 'aos/dist/aos.css'; 
 import { BsArrowRight } from 'react-icons/bs';
 import { usePageLoad } from '@/hook';
-import { ChevronDown } from 'lucide-react';
-import { Zap, Rocket, Globe } from 'lucide-react';
+import { ChevronDown } from 'lucide-react'
+
 const Header = () => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
+
     const {isLoaded} = usePageLoad();
 
     const scrollToSection = (sectionId: string) => {
@@ -31,7 +23,6 @@ const Header = () => {
   };
   return ( 
 
-      //    {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative px-6 pt-20">
         <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
@@ -63,7 +54,7 @@ const Header = () => {
                View My Work <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
              </span>
 
-</Link>
+       </Link>
            </button>
        
         <Link to="Projects" spy={true}  smooth={true}  offset={-55}  duration={1500}>

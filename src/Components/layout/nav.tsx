@@ -1,10 +1,9 @@
-import { IoMdMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
-import { useState,useEffect, MouseEvent } from "react";
+import { BsTwitterX } from "react-icons/bs";
 import { usePageLoad } from "@/hook";
 import Link from "next/link";
-// NavBar Component
+
 export default function NavBar () {
  
   const navItems = [
@@ -15,7 +14,9 @@ export default function NavBar () {
   
 const { isLoaded } = usePageLoad(); 
 
-
+// style
+const transform = "text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12"
+// 
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -65,16 +66,15 @@ return (
               
             </div>
                <div className="flex space-x-4 items-center">
-                <Link href="github.com/Ezekiel26" target="_blank">
-                  <FaGithub className="w-5 h-8 text-slate-400 hover:text-white cursor-pointer transition-colors" />
+                <Link href="https://x.com/easycode01" target="_blank" className={transform}>
+                   <BsTwitterX  className='w-5 h-8' />
+                </Link>
+                <Link href="https://github.com/Adeyemidev" target="_blank" className={transform}>
+                  <FaGithub className={`h-8 w-5 ${transform}`}  />
                 </Link>
 
                 <Link href="https://www.linkedin.com/in/adeyemi-ezekiel-o" target="_blank">
-                 <FaLinkedin className="w-5 h-8 text-slate-400 hover:text-white cursor-pointer transition-colors" />
-                </Link>
-
-                <Link href="mailto:adeyemiezekiel26@gmail.com" target="_blank">
-                  <IoMdMail className="w-5 h-8 text-slate-400 hover:text-white cursor-pointer transition-colors" />
+                 <FaLinkedin className={`h-8 w-5 ${transform}`}  />
                 </Link>
                </div>
              </div>
