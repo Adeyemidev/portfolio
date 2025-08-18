@@ -11,13 +11,13 @@ import { ToastContainer } from 'react-toastify';
 const Portfolio = () => {
   return (
     <div className="text-white " style={{backgroundColor:  '#1F2937'}}
-     >
-      <NavBar />
+     ><p className="text-4xl items-center text-center">Maintainace Mode</p>
+      {/* <NavBar />
       <Header />
       <Skills />
       <Projects />
       <ToastContainer />
-      <Contact /> 
+      <Contact />  */}
     </div>
   );
 };
