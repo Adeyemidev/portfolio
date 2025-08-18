@@ -24,7 +24,7 @@ export default function Projects(){
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={project.id} className={`group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl border-white/20 hover:border-purple-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl ${
+            <div key={project.id} className={`group bg-red-200 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl  transition-all duration-500 transform hover:scale-105  ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`} style={{ transitionDelay: `${index * 100}ms` }}>
               <div className="relative overflow-hidden">

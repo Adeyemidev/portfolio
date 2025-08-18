@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 
 const Portfolio = () => {
   return (
-    <div className="text-white" style={{backgroundColor:  'hsl(207, 26%, 17%)'}}
+    <div className="text-white " style={{backgroundColor:  '#1F2937'}}
      >
       <NavBar />
       <Header />

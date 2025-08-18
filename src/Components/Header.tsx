@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 import { BsArrowRight } from 'react-icons/bs';
 import { usePageLoad } from '@/hook';
 import { ChevronDown } from 'lucide-react'
+import { headerData } from '@/utils/data';
 
 const Header = () => {
 
@@ -21,32 +22,47 @@ const Header = () => {
   scrollToSection(sectionId);
     }
   };
+
+
+  const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = '/resume.pdf'; 
+  link.download = 'Resume.pdf'; 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
   return ( 
 
-      <section className="min-h-screen flex items-center justify-center relative px-6 pt-20">
-        <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      <section className="min-h-screen flex items-center relative pt-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className={`max-w-5xl mx-auto transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <div className="mb-6">
-            <span className="px-4 py-2 animate-pulse bg-gradient-to-r from-purple-50 0/20 to-pink-500/20 rounded-full text-sm font-medium border border-purple-500/30">
+          <div className="mb-16">
+            <span style={{opacity:"0.5"}} className="px-4 py-2 animate-pulse rounded-full text-sm font-medium border border-dashed">
               Available for Opurtunities 
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-24 leading-tight">
-            <span className="bg-gradient-to-r from-white bg-clip-text text-transparent">
-              Software Developer
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl lg:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            I architect and build scalable, high-performance web applications that serve thousands of users. 
-            Specializing in enterprise-grade React ecosystems and modern full-stack solutions.
-          </p>
+       <div id="app">
+        	<div id="wrapper">
+	       	<h1 className="glitch" data-text="
+           I'M ADEYEMI EZEKIEL">I'M ADEYEMI EZEKIEL</h1>
+	        </div>
+       </div>
+
+
+
+           {headerData.paragraphs.map((paragraph, index) => (
+            <p style={{opacity: "0.9"}} className="text-lg md:text-xl lg:text-2xl text-slate-300 my-6  max-w-4xl  leading-relaxed">
+                   {paragraph}
+            </p>
+           ))}
           
 
            <div className="flex flex-col sm:flex-row mt-5 gap-4 justify-center items-center ">
              
-          <button className="group border bg-white from-green-400 to-blue-500 px-8 py-4 rounded-full font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"> 
+          <button className="group border bg-white from-green-400 to-blue-500 px-8 py-4 rounded-full font-medium text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"> 
           
 
            <Link to="projects" onClick={() => scrollToSection("projects")}>
@@ -59,9 +75,11 @@ const Header = () => {
        
         <Link to="Projects" spy={true}  smooth={true}  offset={-55}  duration={1500}>
       
-      <button className="border-2 border-white/20 px-8 py-4 rounded-full font-semibold
+      <button onClick={handleDownload}
+      className="border-2 border-white/20 px-8 py-4 rounded-full font-medium
        hover:border-green-400 hover:text-green-400 transition-all duration-300 hover:scale-105"> 
-      Download Resume  </button>
+          Download Resume 
+     </button>
             
     </Link>
     </div> 
