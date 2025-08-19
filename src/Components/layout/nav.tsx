@@ -162,7 +162,10 @@ export default function NavBar() {
           </div>
           
           {/* Mobile Menu */}
-          <div style={{ backgroundColor:' oklch(14.7% 0.004 49.25)'}} className={`fixed top-0 left-0 h-screen w-64 z-50 lg:hidden transform transition-transform duration-300 ease-in-out ${
+          <div 
+          // style={{ backgroundColor:' oklch(14.7% 0.004 49.25)'}} 
+          className={`fixed top-0 left-0 h-screen w-64 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-xl bg-white/10 border-r border-white/20 shadow-2xl ${
+            // fixed top-0 left-0 h-screen w-64 z-50 lg:hidden transform transition-transform duration-300 ease-in-out ${
             isMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}>
             <div className="pt-4 px-6">
