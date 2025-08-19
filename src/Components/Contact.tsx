@@ -78,7 +78,7 @@ const Contact = () => {
           <div className={`lg:w-1/2 mb-12 lg:mb-0 transform transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
               Contact
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed max-w-md">

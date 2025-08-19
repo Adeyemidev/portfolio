@@ -33,17 +33,17 @@ export default function Projects(){
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 duration-300"></div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-white transition-colors">
                   {project.title}
                 </h3>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="px-3 py-1 text-purple-300 rounded-full text-xs font-medium  transition-colors group-hover:bg-purple-500/30" style={{border: "1px solid", borderColor: "oklch(27.9% 0.041 260.031)"}}>
+                    <span key={tagIndex} className="px-3 py-1 text-white rounded-full text-xs font-medium transition-colors" style={{border: "1px solid", opacity:'0.7', borderColor: "oklch(27.9% 0.041 260.031)"}}>
                       {tag}
                     </span>
                   ))}
@@ -53,7 +53,7 @@ export default function Projects(){
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition-colors group-hover:translate-x-2 transform duration-300"
+                  className="inline-flex items-center font-medium transition-colors group-hover:translate-x-2 transform duration-300"
                 >
                   View Project <BsArrowRight className="ml-2" />
                 </a>

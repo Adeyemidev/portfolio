@@ -12,9 +12,8 @@ import SplashCursor from "@/Components/ui/SplashCursor";
 
 const Portfolio = () => {
   return (
-<div className="text-white" style={{ backgroundColor:' oklch(14.7% 0.004 49.25)'}}
->
-<SplashCursor />
+<div className="text-white" style={{ backgroundColor:' oklch(14.7% 0.004 49.25)'}}>
+  <SplashCursor/>
   <NavBar />
   <Header />
   <Skills />

@@ -80,7 +80,7 @@ const Header = () => {
       
       <button onClick={handleDownload}
       className="border-2 border-white/20 px-8 py-4 rounded-full font-medium
-       hover:border-green-400 hover:text-green-400 transition-all duration-300 hover:scale-105"> 
+       transition-all duration-300 hover:scale-105"> 
           Download Resume 
      </button>
             
