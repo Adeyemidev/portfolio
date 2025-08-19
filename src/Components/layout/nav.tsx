@@ -54,7 +54,7 @@ export default function NavBar() {
       <nav className={`fixed top-0 w-full z-30 transition-all duration-700 
           ${isLoaded ? 'translate-y-0' : '-translate-y-full'}
         `}>
-        <div className="backdrop-blur-md bg-slate-900/80 max-w-7xl mx-auto px-6">
+        <div className="backdrop-blur-md max-w-7xl mx-auto px-6">
           <div className="py-4 border-b shadow-md border-white/20">
             <div className="flex justify-between items-center">
               
@@ -157,7 +157,7 @@ export default function NavBar() {
         <>
           {/* Backdrop - Click to close menu*/}
           <div 
-            className="fixed inset-0 bg-black z-40 lg:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
             onClick={closeMenu}>
           </div>
           

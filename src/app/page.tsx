@@ -7,19 +7,20 @@ import Projects from "@/Components/Projects";
 import Contact from "@/Components/Contact";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import './globals.css'
+import SplashCursor from "@/Components/ui/SplashCursor";
 
 const Portfolio = () => {
   return (
-    <div className="text-white " style={{backgroundColor:  '#1F2937'}}
-     ><p className="text-4xl items-center text-center">Maintainace Mode</p>
-      {/* <NavBar />
-      <Header />
-      <Skills />
-      <Projects />
-      <ToastContainer />
-      <Contact />  */}
-    </div>
-  );
-};
+<div className="text-white" style={{ backgroundColor:' oklch(14.7% 0.004 49.25)'}}
+>
+<SplashCursor />
+  <NavBar />
+  <Header />
+  <Skills />
+  <Projects />
+  <ToastContainer />
+  <Contact />  
+</div>); };
 
 export default Portfolio;

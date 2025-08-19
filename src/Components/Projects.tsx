@@ -9,7 +9,7 @@ export default function Projects(){
   const [setRef, isVisible]= useIntersectionObserver();
 
   return (
-    <section id='projects' className="py-20 bg- gradient-to-b from- gray-800 to-gray -900 relative overflow-hidden">
+    <section id='projects' className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 "></div>
       
       <div ref={setRef} className="container mx-auto px-6 relative z-10">
@@ -24,7 +24,7 @@ export default function Projects(){
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={project.id} className={`group bg-red-200 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl  transition-all duration-500 transform hover:scale-105  ${
+            <div key={project.id} className={`group backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl  transition-all duration-500 transform hover:scale-105  ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`} style={{ transitionDelay: `${index * 100}ms` }}>
               <div className="relative overflow-hidden">
@@ -43,7 +43,7 @@ export default function Projects(){
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs font-medium border border-purple-500/30">
+                    <span key={tagIndex} className="px-3 py-1 text-purple-300 rounded-full text-xs font-medium  transition-colors group-hover:bg-purple-500/30" style={{border: "1px solid", borderColor: "oklch(27.9% 0.041 260.031)"}}>
                       {tag}
                     </span>
                   ))}
@@ -51,6 +51,8 @@ export default function Projects(){
                 
                 <a 
                   href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition-colors group-hover:translate-x-2 transform duration-300"
                 >
                   View Project <BsArrowRight className="ml-2" />

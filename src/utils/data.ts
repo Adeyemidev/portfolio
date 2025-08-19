@@ -20,7 +20,7 @@ interface SkillCategory {
 // Mock data
 export const headerData: HeaderData = {
   paragraphs: [
-    "I build user-centered frontend websites and web apps with a strong focus on creating visually appealing and highly functional user interfaces using modern JavaScript framework such as ReactJS, NextJS. I program this websites using JavaScript/Typescript with dedicated approach to Test-Driven Development (TDD). ",
+    "I build user-centered frontend websites and web apps with a strong focus on creating visually appealing and highly functional user interfaces using modern JavaScript framework such as ReactJS, NextJS. I program this websites using JavaScript/Typescript with dedicated approach to Test-Driven Development (TDD).",
     "Additionally, I have extensive knowledge in 3D visualization using WebGL and ThreeJS, as well as web VR/AR implementation."
   ],
 };
