@@ -82,8 +82,7 @@ const Contact = () => {
               Contact
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-              I would love to hear about your project and how I could help.
-              Please fill in the form, and I'll get back to you as soon as possible.
+              Get in touch or shoot me an email directly on <strong>adeyemiezekiel26@gmail.com</strong> and I'll get back to you as soon as possible.
             </p>
           </div>
 

@@ -3,7 +3,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
 import { usePageLoad } from "@/hook";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,6 +47,17 @@ export default function NavBar() {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+    useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -151,9 +162,9 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-
+       
       {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
+      {isMenuOpen &&  (
         <>
           {/* Backdrop - Click to close menu*/}
           <div 
@@ -163,9 +174,7 @@ export default function NavBar() {
           
           {/* Mobile Menu */}
           <div 
-          // style={{ backgroundColor:' oklch(14.7% 0.004 49.25)'}} 
-          className={`fixed top-0 left-0 h-screen w-64 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-xl bg-white/10 border-r border-white/20 shadow-2xl ${
-            // fixed top-0 left-0 h-screen w-64 z-50 lg:hidden transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 left-0 h-screen w-80 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-lg bg-black/30 border-r border-gray-600/30 shadow-xl ${
             isMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}>
             <div className="pt-4 px-6">
@@ -204,15 +213,17 @@ export default function NavBar() {
               {/* Mobile Navigation Links */}
               <div className="flex flex-col space-y-6">
                 {navItems.map((item) => (
-                  <a 
+
+                  <a
+
                     key={item.label} 
                     href={`#${item.link}`} 
                     onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, item.link)}                  
                     className="text-slate-300 hover:text-white transition-colors relative group cursor-pointer text-lg"
                   >
                     {item.label}
-                    <span className="absolute left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
                   </a>
+
                 ))}
               </div>
               

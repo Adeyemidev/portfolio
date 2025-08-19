@@ -5,7 +5,10 @@ import { BsArrowRight } from 'react-icons/bs';
 import { usePageLoad } from '@/hook';
 import { ChevronDown } from 'lucide-react'
 import { headerData } from '@/utils/data';
+import { useState } from 'react';
+
 const Header = () => {
+    const [isDownloading, setIsDownloading] = useState(false); 
 
     const {isLoaded} = usePageLoad();
 
@@ -22,17 +25,28 @@ const Header = () => {
     }
   };
 
+  const handleDownload = async () => {
+    if (isDownloading) return; 
 
-  const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = '/resume.pdf'; 
-  link.download = 'Resume.pdf'; 
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+    setIsDownloading(true); 
+
+    try {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        const link = document.createElement('a');
+        link.href = '/resume.pdf'; 
+        link.download = 'Resume.pdf'; 
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        await new Promise(resolve => setTimeout(resolve, 500));
+    } catch (error) {
+        console.error('Download failed:', error);
+    } finally {
+        setIsDownloading(false); 
+    }
 };
-
-  
   return ( 
 
       <section className=" container min-h-screen flex items-center relative pt-20">
@@ -76,15 +90,26 @@ const Header = () => {
        </Link>
            </button>
        
-        <Link to="Projects" spy={true}  smooth={true}  offset={-55}  duration={1500}>
-      
-      <button onClick={handleDownload}
-      className="border-2 border-white/20 px-8 py-4 rounded-full font-medium
-       transition-all duration-300 hover:scale-105"> 
-          Download Resume 
-     </button>
+
+     <button 
+    onClick={handleDownload}
+    disabled={isDownloading}
+    className={`border-2 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2 ${
+        isDownloading 
+            ? 'border-white/20 cursor-not-allowed' 
+            : 'border-white/20 '
+    }`}
+> 
+    {isDownloading && (
+        <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+    )}
+    {isDownloading ? 'Downloading...' : 'Download Resume'}
+</button>
             
-    </Link>
+    
     </div> 
 
           

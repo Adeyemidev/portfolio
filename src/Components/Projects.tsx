@@ -9,7 +9,7 @@ export default function Projects(){
   const [setRef, isVisible]= useIntersectionObserver();
 
   return (
-    <section id='projects' className="py-20 relative overflow-hidden">
+    <section id='projects' className="py-16 relative overflow-hidden">
       <div className="absolute inset-0 "></div>
       
       <div ref={setRef} className="container mx-auto px-6 relative z-10">
@@ -24,7 +24,7 @@ export default function Projects(){
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={project.id} className={`group backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl  transition-all duration-500 transform hover:scale-105  ${
+            <div key={project.id} className={`group backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl border border-white/10  transition-all duration-500 transform hover:scale-105  ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`} style={{ transitionDelay: `${index * 100}ms` }}>
               <div className="relative overflow-hidden">
