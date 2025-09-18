@@ -6,10 +6,11 @@ import { usePageLoad } from '@/hook';
 import { ChevronDown } from 'lucide-react'
 import { headerData } from '@/utils/data';
 import { useState } from 'react';
-
+import useIntersectionObserver from '@/hook';
 const Header = () => {
     const [isDownloading, setIsDownloading] = useState(false); 
-
+       const [setRef, isVisible] = useIntersectionObserver();
+     
     const {isLoaded} = usePageLoad();
 
     const scrollToSection = (sectionId: string) => {
@@ -50,7 +51,7 @@ const Header = () => {
   return ( 
 
       <section className=" container min-h-screen flex items-center relative pt-20">
-        <div className={`max-w-5xl mx-auto transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        <div  ref={setRef} className={`max-w-5xl mx-auto transition-all duration-1000 ${isLoaded ?  'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
         >
           <div className="mb-16">
             <span style={{opacity:"0.5"}} className="px-4 py-2 animate-pulse rounded-full text-sm font-medium border border-dashed">

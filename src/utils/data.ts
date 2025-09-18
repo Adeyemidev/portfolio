@@ -54,11 +54,11 @@ about: [
 
 export const projects = [
   {
-    id: 'crowdlaunch',
-    title: 'CROWDLAUNCH',
-    image: '/images/crowdfund.png',
-    link: 'https://crowdlaunch.vercel.app/',
-    tags: ['TYPESCRIPT', 'REACT', 'TAILWINDCSS']
+    id: 'kovio',
+    title: 'Kovio Event Marketplace',
+    image: '/images/kovio.png',
+    link: 'https://kovi-eight.vercel.app/',
+    tags: ['TYPESCRIPT', 'NEXTJS', 'TAILWINDCSS']
   },
   {
     id: 'gcms',
@@ -68,12 +68,13 @@ export const projects = [
     tags: ['REACTJS', 'Styled Component', 'TailwindCSS','EXPRESSJS']
   },
   {
-    id: 'kovio',
-    title: 'KOVIO',
-    image: '/images/kovio.png',
-    link: 'https://kovio-fe.vercel.app/',
-    tags: ['TYPESCRIPT', 'NEXTJS', 'TAILWINDCSS']
+    id: 'crowdlaunch',
+    title: 'CROWDLAUNCH',
+    image: '/images/crowdfund.png',
+    link: 'https://crowdlaunch.vercel.app/',
+    tags: ['TYPESCRIPT', 'REACT', 'TAILWINDCSS']
   },
+  
   {
     id: 'audiophile',
     title: 'AUDIOPHILE',

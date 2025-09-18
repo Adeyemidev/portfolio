@@ -27,7 +27,7 @@ class Toast {
 
   private getToastStyle = (type: 'success' | 'error' | 'info' | 'warning') => {
     const styles = {
-      success: { backgroundColor: '#059669', color: '#ffffff' },
+      success: { backgroundColor: '#0c0a09', color: '#ffffff' },
       error: { backgroundColor: '#dc2626', color: '#ffffff' },
       info: { backgroundColor: '#0891b2', color: '#ffffff' },
       warning: { backgroundColor: '#d97706', color: '#ffffff' }
@@ -102,7 +102,7 @@ export const showToast = {
       style: {
         borderRadius: '8px',
         fontWeight: '500',
-        backgroundColor: '#059669',
+        backgroundColor: '#0c0a09',
         color: '#ffffff',
         ...options?.style
       }

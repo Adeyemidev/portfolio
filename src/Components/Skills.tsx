@@ -11,7 +11,9 @@ export default function Skills() {
   return (
     
    <section id='about' className="container py-20 relative overflow-hidden">
-     <div ref={setRef} className="max-w-5xl mx-auto lg:pl-16">
+     <div 
+     ref={setRef}
+      className="max-w-5xl mx-auto lg:pl-16">
        <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
            
             <div className='block'>
