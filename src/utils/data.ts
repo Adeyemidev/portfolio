@@ -57,7 +57,7 @@ export const projects = [
     id: 'kovio',
     title: 'Kovio Event Marketplace',
     image: '/images/kovio.png',
-    link: 'https://kovi-eight.vercel.app/',
+    link: 'https://kovio-fe.vercel.app',
     tags: ['TYPESCRIPT', 'NEXTJS', 'TAILWINDCSS']
   },
   {
