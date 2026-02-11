@@ -17,7 +17,7 @@ export default function Projects(){
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           
-          <p className=" text-white py-3 rounded-full font-semibold transition-all duration-300 transform ">
+          <p className=" text-white py-3 italic rounded-full font-semibold transition-all duration-300 transform ">
             PROJECTS
           </p>
         </div>

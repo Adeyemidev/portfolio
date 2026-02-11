@@ -1,62 +1,82 @@
 
 'use client'
 
-import { skillsData } from '../utils/data'
+import { skillsData, aboutData } from '../utils/data'
 import useIntersectionObserver from '@/hook'
-import { Code2} from 'lucide-react'
+import { Code2 } from 'lucide-react'
 
 export default function Skills() {
-  const [setRef, isVisible] = useIntersectionObserver();
+  const [setRef, isVisible] = useIntersectionObserver()
 
   return (
-    
-   <section id='about' className="container py-20 relative overflow-hidden">
-     <div 
-     ref={setRef}
-      className="max-w-5xl mx-auto lg:pl-16">
-       <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-           
-            <div className='block'>
-            <Code2 className="w-4 h-4 text-white" opacity={0.5}/>
-            <h2 className="text-4xl md:text-5xl font-medium ml-2" style={{opacity: "0.5"}}>
-                About Me 
+    <section id="about" className=" py-20 relative overflow-hidden">
+      <div
+        ref={setRef}
+        className="max-w- 5xl mx- auto lg:pl-[10rem]"
+      >
+        {/* ABOUT SECTION */}
+        <div
+          className={`mb-16 transform transition-all duration-1000 ${
+            isVisible
+              ? 'translate-y-0 opacity-100'
+              : 'translate-y-10 opacity-0'
+          }`}
+        >
+          <div className="flex items-center gap-2 mb-6">
+            <Code2 className="w-4 h-4 text-white opacity-50" />
+            <h2 className="text-white font-semibold italic text-lg">
+              ABOUT ME
             </h2>
-            <Code2 className="w-4 h-4 text-white" opacity={0.5}/>
-          </div>
-
-          {skillsData[0].about?.map((about)=>(
-          <p className="text-gray-300 my-6 text-lg max-w-4xl leading-relaxed">
-
-            {about}
-
-          </p>))}
-        </div>
-
-        {/* Skills Section */}       
-              
-         <div className="text-center text-3xl text-left font-medium text-white">
-            {skillsData.map((cat, index) => (
-             <div>
-              <>             
-                   <h2 className="text-4xl mb-6 md:text-5xl font-medium" style={{opacity: "0.5"}}>
-              {cat.category}            
-            </h2>
-
-           </> 
-               <ul className='grid grid-cols-3 gap-3 lg:gap-6'>
-                 {cat.skills && cat.skills.map((skill: { name: string }, i: number) => (
-                   <p key={i}>• {skill.name}</p>
-                 ))}
-               </ul>
-             </div>
-            ))}
+            <Code2 className="w-4 h-4 text-white opacity-50" />
           </div>
 
 
-           
+        <div className='text-gray-300 text-sm max-w-4xl leading-relaxed'>
+          <p className='my-4'>I work with SaaS founders and startup teams to fix slow, conversion-killing frontends and replace them with fast, intuitive interfaces users actually enjoy.
+         </p>
+
+         <p className='my-4'>My work has helped:</p>
+
+          <ol>
+            <ol>Improve conversions through UX and performance optimization</ol>
+             <ol> Improve conversions through UX and performance optimization</ol>
+            <ol> Build real-time platforms handuling thousands of users</ol>
+          </ol>
+
+          <p className='my-4'>I specialize in frontend development for SaaS and e-commerce platforms, focusing on clean, maintainable code that directly impacts business growth.
+          </p>
+            
+            <p className='my-4'>I enjoy working with startups and growing companies because you get to see the real, measurable impact of good frontend engineering.
+            </p>
+        </div>
+         
         </div>
 
-      </section>
-      
-  );
-};
+
+        {/* SKILLS SECTION */}
+        <div className="text-left text-white text-center mx-auto">
+          {skillsData.map((category, index) => (
+            <div key={index} className="my-8">
+              <h3 className="text-4xl md:text-5xl font-semibold italic mb-6 ">
+                {category.category}
+              </h3>
+
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                {category.skills.map((skill, i) => (
+                  <li key={i}>
+                    <p className="font-semibold text-lg">
+                      {skill.name}
+                    </p>
+                    <p className="text-gray-300 font-normal text-sm">
+                      {skill.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

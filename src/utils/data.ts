@@ -1,6 +1,15 @@
+
+/* =======================
+   TYPES
+======================= */
+
 interface HeaderData {
   paragraphs: string[];
-  
+}
+
+interface AboutData {
+  paragraphs: string[];
+  highlights: string[];
 }
 
 interface Skill {
@@ -13,53 +22,89 @@ interface SkillCategory {
   skills: Skill[];
 }
 
+interface Project {
+  id: string;
+  title: string;
+  image: string;
+  link: string;
+  tags: string[];
+}
 
+/* =======================
+   HEADER
+======================= */
 
-
-
-// Mock data
 export const headerData: HeaderData = {
   paragraphs: [
-    "I build user-centered frontend websites and web apps with a strong focus on creating visually appealing and highly functional user interfaces using modern JavaScript framework such as ReactJS, NextJS. I program this websites using JavaScript/Typescript with dedicated approach to Test-Driven Development (TDD).",
-    "Additionally, I have extensive knowledge in 3D visualization using WebGL and ThreeJS, as well as web VR/AR implementation."
+    "Frontend developer helping SaaS startups build fast, AI-integrated web apps that convert users into customers.",
+    "Over 4+ years, I’ve worked with startups globally to improve performance, UX, and frontend systems that directly impact growth, retention, and revenue.",
   ],
 };
 
-export const skillsData = [
+/* =======================
+   ABOUT
+======================= */
 
-  { 
-about: [
-  "I genuinely care about performance optimization and user experience. There's something satisfying about shaving seconds off load times or seeing conversion rates improve because the interface just makes sense.",
-  "I love working with startups and growing companies because you get to see the direct impact of good frontend work on business growth. Whether it's an e-commerce site, SaaS platform, or fintech application, I focus on building interfaces that users actually enjoy using.",
-  "Always up for interesting frontend challenges, especially if they involve modern JavaScript frameworks or creative UI/UX solutions."
-]},
+export const aboutData = {
+  paragraphs: [
+    "I work with SaaS founders and startup teams to fix slow, conversion-killing frontends and replace them with fast, intuitive interfaces users actually enjoy.",
+  "My work has helped:",
+  " ~ Reduce page load times by up to 25%",
+  "~ Improve conversions through UX and performance optimization",
+  "~ Build real-time platforms handling thousands of users",
 
-  {
-    category: "MY GO-TO TECH STACK:",
-    skills: [
-      { name: "React.js" },
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-      { name: "Redux" },
-      { name: "Three.js" },
-      { name: "Node.js" },
-      { name: "GraphQL" },
-      { name: "MongoDB" }
-    
+  "I specialize in frontend development for SaaS and e-commerce platforms, focusing on clean, maintainable code that directly impacts business growth.",
+  "I enjoy working with startups and growing companies because you get to see the real, measurable impact of good frontend engineering."
   ]
-  },
+};
 
+/* =======================
+   SKILLS
+======================= */
+
+export const skillsData: SkillCategory[] = [
+  {
+    category: "TECH STACK",
+    skills: [
+      {
+        name: "React & Next.js ",
+        description: "high-performance, scalable SaaS frontend",
+      },
+      {
+        name: "TypeScript",
+        description: "predictable, maintainable codebases",
+      },
+      {
+        name: "Tailwind CSS",
+        description: 'fast, consistent UI development',
+      },
+      {
+        name: "AI Integrations",
+        description: "smarter user experiences and workflow automation",
+      },
+    ],
+  },
 ];
+
+/* =======================
+   PROJECTS
+======================= */
 
 export const projects = [
   {
-    id: 'kovio',
-    title: 'Kovio Event Marketplace',
-    image: '/images/kovio.png',
-    link: 'https://kovio-fe.vercel.app',
-    tags: ['TYPESCRIPT', 'NEXTJS', 'TAILWINDCSS']
+    id: 'SwiftPass',
+    title: 'SwiftPass Website',
+    image: '/images/swiftpass.png',
+    link: 'https://swift-pass-customer-web.vercel.app',
+    tags: ['NEXTJS', 'TYPESCRIPT', 'SHADCN + TAILWINDCSS']
   },
+  // {
+  //   id: 'kovio',
+  //   title: 'Kovio Event Marketplace',
+  //   image: '/images/kovio.png',
+  //   link: 'https://kovio-fe.vercel.app',
+  //   tags: ['TYPESCRIPT', 'NEXTJS', 'TAILWINDCSS']
+  // },
   {
     id: 'gcms',
     title: 'GCMS Website',
@@ -97,4 +142,3 @@ export const projects = [
     tags: ['REACT', 'CSS', 'JAVASCRIPT']
   }
 ];
-

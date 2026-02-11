@@ -48,10 +48,7 @@ h1 {
 	animation: glitch-anim2 2s infinite linear alternate-reverse;
 }
 
-/* Creates an animation with 20 steaps. For each step, it calculates 
-a percentage for the specific step. It then generates a random clip
-box to be used for the random glitch effect. Also adds a very subtle
-/* Glitch animation keyframes using only standard CSS */
+
 @keyframes glitch-anim {
 	0% {
 		clip: rect(42px, 9999px, 44px, 0);
