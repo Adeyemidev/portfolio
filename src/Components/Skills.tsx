@@ -1,7 +1,7 @@
 
 'use client'
 
-import { skillsData, aboutData } from '../utils/data'
+import { skillsData } from '../utils/data'
 import useIntersectionObserver from '@/hook'
 import { Code2 } from 'lucide-react'
 
@@ -12,11 +12,11 @@ export default function Skills() {
     <section id="about" className=" py-20 relative overflow-hidden">
       <div
         ref={setRef}
-        className="max-w- 5xl mx- auto lg:pl-[10rem]"
+        className="max-w- 5xl mx- auto px-6 md:px-0 "
       >
         {/* ABOUT SECTION */}
         <div
-          className={`mb-16 transform transition-all duration-1000 ${
+          className={`mb-16 transform transition-all duration-1000 lg:pl-[10rem] ${
             isVisible
               ? 'translate-y-0 opacity-100'
               : 'translate-y-10 opacity-0'
@@ -38,9 +38,9 @@ export default function Skills() {
          <p className='my-4'>My work has helped:</p>
 
           <ol>
-            <ol>Improve conversions through UX and performance optimization</ol>
-             <ol> Improve conversions through UX and performance optimization</ol>
-            <ol> Build real-time platforms handuling thousands of users</ol>
+            <ol>~ Improve conversions through UX and performance optimization</ol>
+             <ol> ~ Improve conversions through UX and performance optimization</ol>
+            <ol> ~ Build real-time platforms handuling thousands of users</ol>
           </ol>
 
           <p className='my-4'>I specialize in frontend development for SaaS and e-commerce platforms, focusing on clean, maintainable code that directly impacts business growth.
@@ -54,20 +54,20 @@ export default function Skills() {
 
 
         {/* SKILLS SECTION */}
-        <div className="text-left text-white text-center mx-auto">
+        <div className="text-left mx-auto text-center text-white">
           {skillsData.map((category, index) => (
             <div key={index} className="my-8">
               <h3 className="text-4xl md:text-5xl font-semibold italic mb-6 ">
                 {category.category}
               </h3>
 
-              <ul className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <ul className='grid  grid-cols-2 space-y-20 place-items-center sp'>
                 {category.skills.map((skill, i) => (
                   <li key={i}>
                     <p className="font-semibold text-lg">
                       {skill.name}
                     </p>
-                    <p className="text-gray-300 font-normal text-sm">
+                    <p className="text-gray-300 font-normal text-center text-sm">
                       {skill.description}
                     </p>
                   </li>

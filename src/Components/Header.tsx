@@ -112,7 +112,7 @@ const Header = () => {
         </div>  
   
        </div>
-      <ChevronDown className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
+      <ChevronDown className="absolute -bottom-10 lg:-bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
     </section>
   );
 };

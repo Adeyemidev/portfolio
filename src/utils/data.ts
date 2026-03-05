@@ -41,22 +41,6 @@ export const headerData: HeaderData = {
   ],
 };
 
-/* =======================
-   ABOUT
-======================= */
-
-export const aboutData = {
-  paragraphs: [
-    "I work with SaaS founders and startup teams to fix slow, conversion-killing frontends and replace them with fast, intuitive interfaces users actually enjoy.",
-  "My work has helped:",
-  " ~ Reduce page load times by up to 25%",
-  "~ Improve conversions through UX and performance optimization",
-  "~ Build real-time platforms handling thousands of users",
-
-  "I specialize in frontend development for SaaS and e-commerce platforms, focusing on clean, maintainable code that directly impacts business growth.",
-  "I enjoy working with startups and growing companies because you get to see the real, measurable impact of good frontend engineering."
-  ]
-};
 
 /* =======================
    SKILLS
