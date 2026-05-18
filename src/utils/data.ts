@@ -70,7 +70,7 @@ export const skillsData: SkillCategory[] = [
   },
 ];
 
-/* =======================
+/* ==================
    PROJECTS
 ======================= */
 
@@ -82,13 +82,13 @@ export const projects = [
     link: 'https://swift-pass-customer-web.vercel.app',
     tags: ['NEXTJS', 'TYPESCRIPT', 'SHADCN + TAILWINDCSS']
   },
-  // {
-  //   id: 'kovio',
-  //   title: 'Kovio Event Marketplace',
-  //   image: '/images/kovio.png',
-  //   link: 'https://kovio-fe.vercel.app',
-  //   tags: ['TYPESCRIPT', 'NEXTJS', 'TAILWINDCSS']
-  // },
+  {
+    id: 'kovio',
+    title: 'Kovio Event Marketplace',
+    image: '/images/kovio.png',
+    link: 'https://kovio-fe.vercel.app/',
+    tags: ['TYPESCRIPT', 'NEXTJS', 'TAILWINDCSS']
+  },
   {
     id: 'gcms',
     title: 'GCMS Website',
