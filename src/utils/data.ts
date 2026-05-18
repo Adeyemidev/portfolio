@@ -76,6 +76,13 @@ export const skillsData: SkillCategory[] = [
 
 export const projects = [
   {
+    id: 'Ambaqual Fashion Design - Ecommerce Website',
+    title: 'Ambaqual Fashion Design - Ecommerce Website',
+    image: '/images/homie.png',
+    link: 'https://ambaqualfashiondesign.ambaqualgroup.co.uk/',
+    tags: ['Wordpress', 'Css', 'Elementor + Woocommerce']
+  },
+  {
     id: 'SwiftPass',
     title: 'SwiftPass Website',
     image: '/images/swiftpass.png',
@@ -96,6 +103,13 @@ export const projects = [
     link: 'https://mummyserena.netlify.app/',
     tags: ['REACTJS', 'Styled Component', 'TailwindCSS','EXPRESSJS']
   },
+  //   {
+  //   id: 'NWL - Admin System',
+  //   title: 'NWL - Admin System',
+  //   image: '/images/homie.png',
+  //   link: 'https://ambaqualfashiondesign.ambaqualgroup.co.uk/',
+  //   tags: ['React', 'Nextjs', 'Tailwind + Woocommerce']
+  // },
   {
     id: 'crowdlaunch',
     title: 'CROWDLAUNCH',
