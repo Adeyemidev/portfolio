@@ -15,6 +15,8 @@ theme: {
         xl: "2rem",
         "2xl": "4rem",
       },
+
+	//   
       center: true,
     },
 	colour: {
