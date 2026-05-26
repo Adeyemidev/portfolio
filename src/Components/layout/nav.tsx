@@ -1,184 +1,157 @@
+"use client";
+
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
-import { usePageLoad } from "@/hook";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
+import { navItems, socialLinks } from "@/utils/data";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const navItems = [
-    { label: "Projects", link: "projects" },
-    { label: "Contact", link: "contact" },
-    { label: "About", link: "about" }
-  ];
+  const pathname = usePathname();
   
-  const { isLoaded } = usePageLoad(); 
 
-  // Style for social icons
-  const transform = "text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12";
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest'
-      });
-    }
-  };
+  const transform =
+    "text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12";
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
-    e.preventDefault();
-    scrollToSection(sectionId);
-    // Close mobile menu after clicking
-    setIsMenuOpen(false);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-    useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  const [mounted, setMounted] = useState(false);
+
+useEffect(() => {
+  setMounted(true);
+}, []);
   return (
     <>
-      {/* Fixed Navigation Bar */}
-      <nav className={`fixed top-0 w-full z-30 transition-all duration-700 
-          ${isLoaded ? 'translate-y-0' : '-translate-y-full'}
-        `}>
-        <div className="backdrop-blur-md max-w-7xl mx-auto px-6">
-          <div className="py-4 border-b shadow-md border-white/20">
-            <div className="flex justify-between items-center">
-              
-              {/* Hamburger Menu Button */}
-              <button
-                className="lg:hidden text-white transition-transform duration-300 ease-in-out z-50 relative"
-                onClick={toggleMenu}
-                aria-label="Toggle menu"
-                style={{
-                  transform: isMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)'
-                }}
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transition-all duration-300"
-                >
-                  {!isMenuOpen ? (
-                    <>
-                      <path
-                        d="M3 12H21"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M3 6H21"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M3 18H21"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <path
-                        d="M18 6L6 18"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M6 6L18 18"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </>
-                  )}
-                </svg>
-              </button>
+    <nav className={`fixed top-0 left-0 w-full z-30 transform transition-all duration-700 ${
+  mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+}`}>
+     
+        <div className="backdrop-blur-md border-b shadow-md border-white/20 container p-0">
+          <div className="flex w-full items-center justify-between py-4">
+            <Link href="/" className="shrink-0 pl-0">
+                <img src="/images/logo.svg" alt="Logo" className="h-8 w-auto block" />
+              </Link>
+            <div className="flex items-center gap-8 min-w-0">
 
-              {/* Desktop Navigation */}
               <div className="hidden md:flex space-x-8">
                 {navItems.map((item) => (
-                  <a 
-                    key={item.label} 
-                    href={`#${item.link}`} 
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, item.link)}                  
-                    className="text-slate-300 hover:text-white transition-colors relative group cursor-pointer"
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`text-slate-300 hover:text-white transition-colors relative group text-sm ${
+                      isActive(item.href) ? "text-white" : ""
+                    }`}
                   >
                     {item.label}
-                    <span className="absolute left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
-                  </a>
+                    <span
+                      className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 ${
+                        isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
                 ))}
               </div>
+            </div>
 
-              {/* Social Media Links */}
-              <div className="flex space-x-4 items-center">
-                <Link href="https://x.com/easycode01" target="_blank" className={transform}>
-                  <BsTwitterX className='w-5 h-5' />
+            <div className="flex items-center gap-4 shrink-0">
+                <Link
+                  href="/contact"
+                  className="text-sm  hidden lg:block border border-white/20 px-4 py-2 bg-blue-600 transition-colors"
+                >
+                  CONTACT
                 </Link>
-                <Link href="https://github.com/Adeyemidev" target="_blank" className={transform}>
-                  <FaGithub className='h-5 w-5' />
-                </Link>
-                <Link href="https://www.linkedin.com/in/adeyemi-ezekiel-o" target="_blank" className={transform}>
-                  <FaLinkedin className='h-5 w-5' />
-                </Link>
-              </div>
+                <button
+                  className="lg:hidden text-white transition-transform duration-300 ease-in-out z-50 relative"
+                  onClick={toggleMenu}
+                  aria-label="Toggle menu"
+                  style={{
+                    transform: isMenuOpen ? "rotate(90deg)" : "rotate(0deg)",
+                  }}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="transition-all duration-300"
+                  >
+                    {!isMenuOpen ? (
+                      <>
+                        <path
+                          d="M3 12H21"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M3 6H21"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M3 18H21"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <path
+                          d="M18 6L6 18"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M6 6L18 18"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </>
+                    )}
+                  </svg>
+                </button>
             </div>
           </div>
         </div>
       </nav>
-       
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen &&  (
+
+      {isMenuOpen && (
         <>
-          {/* Backdrop - Click to close menu*/}
-          <div 
+          <div
             className="fixed inset-0 z-40 lg:hidden"
-            onClick={closeMenu}>
-          </div>
-          
-          {/* Mobile Menu */}
-          <div 
-          className={`fixed top-0 left-0 h-screen w-80 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-lg bg-black/30 border-r border-gray-600/30 shadow-xl ${
-            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}>
+            onClick={closeMenu}
+            aria-hidden
+          />
+          <div
+            className={`fixed top-0 left-0 h-screen w-80 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-lg bg-black/30 border-r border-gray-600/30 shadow-xl ${
+              isMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
             <div className="pt-4 px-6">
-              {/* Close button inside mobile menu */}
               <div className="flex justify-start mb-6">
                 <button
                   onClick={closeMenu}
@@ -210,34 +183,26 @@ export default function NavBar() {
                 </button>
               </div>
 
-              {/* Mobile Navigation Links */}
               <div className="flex flex-col space-y-6">
                 {navItems.map((item) => (
-
-                  <a
-
-                    key={item.label} 
-                    href={`#${item.link}`} 
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, item.link)}                  
-                    className="text-slate-300 hover:text-white transition-colors relative group cursor-pointer text-lg"
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={closeMenu}
+                    className={`text-white/80 hover:text-white transition-colors text-xs ${
+                      isActive(item.href) ? "text-white" : ""
+                    }`}
                   >
                     {item.label}
-                  </a>
-
+                  </Link>
                 ))}
               </div>
-              
-              {/* Mobile Social Links */}
+
               <div className="flex space-x-4 items-center mt-8 pt-6 border-t border-white/20">
-                <Link href="https://x.com/easycode01" target="_blank" className={transform}>
-                  <BsTwitterX className='w-6 h-6' />
-                </Link>
-                <Link href="https://github.com/Adeyemidev" target="_blank" className={transform}>
-                  <FaGithub className='h-6 w-6' />
-                </Link>
-                <Link href="https://www.linkedin.com/in/adeyemi-ezekiel-o" target="_blank" className={transform}>
-                  <FaLinkedin className='h-6 w-6' />
-                </Link>
+              <button
+                 type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold py-2.5 text-sm tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
+             > Contact </button>
               </div>
             </div>
           </div>

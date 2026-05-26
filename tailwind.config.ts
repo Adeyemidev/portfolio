@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -9,63 +8,64 @@ module.exports = {
 ],
 theme: {
 	container: {
-		padding: {
-			DEFAULT: '1rem',
-			 sm: '2rem',
-			lg: '4rem',
-			xl: '5rem',
-			'2xl': '6rem'
-		},
-		center: true
+      padding: {
+        DEFAULT: "2rem",
+        sm: "3rem",
+        lg: "2rem",
+        xl: "2rem",
+        "2xl": "4rem",
+      },
+      center: true,
+    },
+	colour: {
+		  colors: {
+        'dark-bg': 'oklch(14.7% 0.004 49.25)',
+      },
 	},
-	
-	fontSize: {
-		extralarge: [
-			'88px',
-			{
-				lineHeight: '88px',
-				letterSpacing: '-2.5px'
-			}
-		],
-		large: [
-			'48px',
-			{
-				lineHeight: '56px',
-				letterSpacing: '-1.5px'
-			}
-		],
-		medium: [
-			'32px',
-			{
-				lineHeight: '40px',
-				letterSpacing: '-1px'
-			}
-		],
-		small: [
-			'24px',
-			{
-				lineHeight: '32px',
-				letterSpacing: '-0.44px'
-			}
-		],
-		smaller: [
-			'18px',
-			{
-				lineHeight: '28px'
-			}
-		],
-		smallest: [
-			'16px',
-			{
-				lineHeight: '26px'
-			}
-		]
-	},
-
-
-
 
 	     extend: {
+	       fontSize: {
+	         extralarge: [
+	           '88px',
+	           {
+	             lineHeight: '88px',
+	             letterSpacing: '-2.5px',
+	           },
+	         ],
+	         large: [
+	           '48px',
+	           {
+	             lineHeight: '56px',
+	             letterSpacing: '-1.5px',
+	           },
+	         ],
+	         medium: [
+	           '32px',
+	           {
+	             lineHeight: '40px',
+	             letterSpacing: '-1px',
+	           },
+	         ],
+	         small: [
+	           '24px',
+	           {
+	             lineHeight: '32px',
+	             letterSpacing: '-0.44px',
+	           },
+	         ],
+	         smaller: [
+	           '18px',
+	           {
+	             lineHeight: '28px',
+	           },
+	         ],
+	         smallest: [
+	           '16px',
+	           {
+	             lineHeight: '26px',
+	           },
+	         ],
+	       },
 	       keyframes: {
 	         glitch: {
 	      "0%": { "clip-path": "inset(20% 0 50% 0)" },
