@@ -1,78 +1,54 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-  "./src/**/*.{js,ts,jsx,tsx}",
-  "./app/**/*.{js,ts,jsx,tsx}",
-  "./pages/**/*.{js,ts,jsx,tsx}",
-  "./components/**/*.{js,ts,jsx,tsx}",
-],
-theme: {
-	container: {
-      padding: {
-        DEFAULT: "2rem",
-        sm: "3rem",
-        lg: "2rem",
-        xl: "2rem",
-        "2xl": "4rem",
-      },
-
-	//   
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    container: {
       center: true,
+      padding: {
+        DEFAULT: "1rem",    // mobile — 16px each side (tight like WhatsApp)
+        sm: "1.5rem",       // small tablet — 24px
+        md: "2rem",         // tablet — 32px
+        lg: "4rem",         // desktop — 64px
+        xl: "6rem",         // large desktop — 96px
+        "2xl": "8rem",      // wide screen — 128px
+      },
     },
-	colour: {
-		  colors: {
+    colors: {
+      'dark-bg': 'oklch(14.7% 0.004 49.25)',
+    },
+    extend: {
+      colors: {
         'dark-bg': 'oklch(14.7% 0.004 49.25)',
       },
-	},
+      fontSize: {
+        extralarge: ["88px", { lineHeight: "88px", letterSpacing: "-2.5px" }],
+        large: ["48px", { lineHeight: "56px", letterSpacing: "-1.5px" }],
+        medium: ["32px", { lineHeight: "40px", letterSpacing: "-1px" }],
+        small: ["24px", { lineHeight: "32px", letterSpacing: "-0.44px" }],
+        smaller: ["18px", { lineHeight: "28px" }],
+        smallest: ["16px", { lineHeight: "26px" }],
+      },
 
-	     extend: {
-	       fontSize: {
-	         extralarge: [
-	           '88px',
-	           {
-	             lineHeight: '88px',
-	             letterSpacing: '-2.5px',
-	           },
-	         ],
-	         large: [
-	           '48px',
-	           {
-	             lineHeight: '56px',
-	             letterSpacing: '-1.5px',
-	           },
-	         ],
-	         medium: [
-	           '32px',
-	           {
-	             lineHeight: '40px',
-	             letterSpacing: '-1px',
-	           },
-	         ],
-	         small: [
-	           '24px',
-	           {
-	             lineHeight: '32px',
-	             letterSpacing: '-0.44px',
-	           },
-	         ],
-	         smaller: [
-	           '18px',
-	           {
-	             lineHeight: '28px',
-	           },
-	         ],
-	         smallest: [
-	           '16px',
-	           {
-	             lineHeight: '26px',
-	           },
-	         ],
-	       },
-	       keyframes: {
-	         glitch: {
-	      "0%": { "clip-path": "inset(20% 0 50% 0)" },
-	      "5%": { "clip-path": "inset(10% 0 60% 0)" },
-	      "10%": { "clip-path": "inset(15% 0 55% 0)" },
+// 	  fontFamily: {
+//        Heading: ["Barlow Condensed", "sans-serif"],
+//       interText: ["Inter", "sans-serif"],
+// },
+
+      fontFamily: {
+          Heading: ["var(--font-heading)", "sans-serif"],
+          interText: ["var(--font-inter)", "sans-serif"],
+       },
+	   
+      keyframes: {
+        glitch: {
+          "0%": { "clip-path": "inset(20% 0 50% 0)" },
+          "5%": { "clip-path": "inset(10% 0 60% 0)" },
+          "10%": { "clip-path": "inset(15% 0 55% 0)" },
           "15%": { "clip-path": "inset(25% 0 35% 0)" },
           "20%": { "clip-path": "inset(30% 0 40% 0)" },
           "25%": { "clip-path": "inset(40% 0 20% 0)" },
@@ -96,15 +72,8 @@ theme: {
       animation: {
         "glitch-after": "glitch var(--after-duration) infinite linear alternate-reverse",
         "glitch-before": "glitch var(--before-duration) infinite linear alternate-reverse",
-	  },
-	},
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };
-
-
-
-
-
-
-

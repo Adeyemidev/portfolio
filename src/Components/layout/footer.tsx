@@ -59,7 +59,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="text-white pt-16 pb-0 relative overflow-hidden">
-      <div className="container">
+      <div >
       {/* Nav Links */}
       <div className="flex justify-center flex-wrap gap-6 mb-8 text-xs font-bold tracking-widest uppercase">
         {navLinks.map(({ label, href }) => (

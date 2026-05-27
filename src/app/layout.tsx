@@ -1,14 +1,17 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import SiteShell from "@/Components/layout/SiteShell";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800", "900"],
+  variable: "--font-heading",
+});
 
-// export const metadata: Metadata = {
-//   title: "Home - Frontend Engineer",
-//   description: "Adeyemi Ezekiel Portfolio",
-// };
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export default function RootLayout({
   children,
@@ -16,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body className={inter.className}>
+    <html lang="en">
+      <body className={`${inter.variable} ${barlow.variable} font-inter`}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

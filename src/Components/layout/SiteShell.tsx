@@ -11,7 +11,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
     <div className="text-white min-h-screen" style={{ backgroundColor: SITE_BACKGROUND }}>
       <SplashCursor />
       <NavBar />
-      <main className="container">{children}</main>
+      <main >{children}</main>
       <ToastContainer />
       <Footer/>
     </div>

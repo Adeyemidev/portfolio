@@ -36,11 +36,11 @@ useEffect(() => {
 }, []);
   return (
     <>
-    <nav className={`fixed top-0 left-0 w-full z-30 transform transition-all duration-700 ${
+    <nav className={`fixed top-0 left-0 w-full z-30 transform transition-all duration-700 container ${
   mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
 }`}>
      
-        <div className="backdrop-blur-md border-b shadow-md border-white/20 container p-0">
+        <div className="backdrop-blur-md border-b shadow-md border-white/20 ">
           <div className="flex w-full items-center justify-between py-4">
             <Link href="/" className="shrink-0 pl-0">
                 <img src="/images/logo.svg" alt="Logo" className="h-8 w-auto block" />
