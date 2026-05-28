@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="min-h-screen block items-center relative pt-20">
+      <section className="min-h-screen block items-center relative pt-10">
 
         {/* Badge — slides down from top */}
         <div
@@ -104,7 +104,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row mt-5 gap-4 justify-center items-center">
             <Link
               href="/work"
-              className="group border border-white/20 bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
+              className="group border border-blue-600 bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
             >
               View My Work
               <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -114,7 +114,7 @@ const Home = () => {
               onClick={handleDownload}
               disabled={isDownloading}
               className={`border-2 px-8 py-4 font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2 ${
-                isDownloading ? "border-white/20 cursor-not-allowed" : "border-white/20"
+                isDownloading ? "border-white/10 cursor-not-allowed" : "border-white/10"
               }`}
             >
               {isDownloading && (
@@ -189,7 +189,7 @@ const Home = () => {
             <p className="text-white/80 mb-6">{passionBlock.description}</p>
             <Link
               href={passionBlock.ctaHref}
-              className="border border-white/20 px-6 py-3 bg-blue-600 hover:bg-white/10 inline-block"
+              className="border border-white/10 px-6 py-3 bg-blue-600 hover:bg-white/10 inline-block"
             >
               {passionBlock.ctaLabel}
             </Link>

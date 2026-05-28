@@ -86,7 +86,7 @@ export default function About() {
               onClick={handleDownload}
               disabled={isDownloading}
               className={`border-2 px-8 py-4 font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 ${
-                isDownloading ? "border-white/20 cursor-not-allowed" : "border-white/20"
+                isDownloading ? "border-white/10 cursor-not-allowed" : "border-white/10"
               }`}
             >
               {isDownloading && (

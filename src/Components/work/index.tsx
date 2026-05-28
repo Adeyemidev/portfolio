@@ -117,8 +117,8 @@ export default function Works() {
                   onClick={() => setActive(f)}
                   className={`text-xs px-3 py-1.5 border transition-all ${
                     active === f
-                      ? "border-white bg-white text-black font-bold"
-                      : "border-white/20 text-white/60 hover:border-white/60 hover:text-white"
+                      ? "border-red bg-white text-black font-bold"
+                      : "border-white/20 text-white/60 hover:border-white/15 hover:text-white"
                   }`}
                 >
                   {f}
@@ -162,7 +162,7 @@ export default function Works() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs border border-white/20 px-3 py-0.5 rounded-full text-white/50"
+                        className="text-xs border border-white/10 px-3 py-0.5 rounded-full text-white/50"
                       >
                         {tag}
                       </span>

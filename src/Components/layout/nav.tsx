@@ -36,12 +36,12 @@ useEffect(() => {
 }, []);
   return (
     <>
-    <nav className={`fixed top-0 left-0 w-full z-30 transform transition-all duration-700 container ${
+    <nav className={`fixed top-0  w-full z-30 transform transition-all duration-700  ${
   mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
 }`}>
      
-        <div className="backdrop-blur-md border-b shadow-md border-white/20 ">
-          <div className="flex w-full items-center justify-between py-4">
+        <div className="backdrop-blur-md  shadow-md ">
+          <div className="flex w-full items-center justify-between container border-b border-white/10 py-4">
             <Link href="/" className="shrink-0 pl-0">
                 <img src="/images/logo.svg" alt="Logo" className="h-8 w-auto block" />
               </Link>
@@ -70,7 +70,7 @@ useEffect(() => {
             <div className="flex items-center gap-4 shrink-0">
                 <Link
                   href="/contact"
-                  className="text-sm  hidden lg:block border border-white/20 px-4 py-2 bg-blue-600 transition-colors"
+                  className="text-sm  hidden lg:block border border-white/10 px-4 py-2 bg-blue-600 transition-colors"
                 >
                   CONTACT
                 </Link>
@@ -198,7 +198,7 @@ useEffect(() => {
                 ))}
               </div>
 
-              <div className="flex space-x-4 items-center mt-8 pt-6 border-t border-white/20">
+              <div className="flex space-x-4 items-center mt-8 pt-6 border-t border-white/10">
               <button
                  type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold py-2.5 text-sm tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"

@@ -10,21 +10,21 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",    // mobile — 16px each side (tight like WhatsApp)
+        DEFAULT: "1.5rem",    // mobile — 16px each side (tight like WhatsApp)
         sm: "1.5rem",       // small tablet — 24px
         md: "2rem",         // tablet — 32px
-        lg: "4rem",         // desktop — 64px
-        xl: "6rem",         // large desktop — 96px
-        "2xl": "8rem",      // wide screen — 128px
+        lg: "2rem",         // desktop — 64px
+        xl: "2rem",         // large desktop — 96px
+        "2xl": "3rem",      // wide screen — 128px
       },
     },
-    colors: {
-      'dark-bg': 'oklch(14.7% 0.004 49.25)',
-    },
+    // colors: {
+    //   'dark-bg': 'oklch(14.7% 0.004 49.25)',
+    // },
     extend: {
-      colors: {
-        'dark-bg': 'oklch(14.7% 0.004 49.25)',
-      },
+    //   colors: {
+    //     'dark-bg': 'oklch(14.7% 0.004 49.25)',
+    //   },
       fontSize: {
         extralarge: ["88px", { lineHeight: "88px", letterSpacing: "-2.5px" }],
         large: ["48px", { lineHeight: "56px", letterSpacing: "-1.5px" }],
@@ -43,7 +43,7 @@ module.exports = {
           Heading: ["var(--font-heading)", "sans-serif"],
           interText: ["var(--font-inter)", "sans-serif"],
        },
-	   
+
       keyframes: {
         glitch: {
           "0%": { "clip-path": "inset(20% 0 50% 0)" },
