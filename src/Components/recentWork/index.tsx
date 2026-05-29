@@ -48,7 +48,7 @@ export default function RecentWork() {
       </p>
 
       {/* Projects Grid - asymmetric 65/35 layout */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-3 gap-4">
         {projects.map((project, i) => (
           <div
             key={i}
@@ -60,7 +60,7 @@ export default function RecentWork() {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-95"
+              className="w-full h-[300px] lg:h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-95"
             />
 
             {/* Overlay */}

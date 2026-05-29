@@ -47,11 +47,11 @@ const Home = () => {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="min-h-screen block items-center relative pt-10">
+      <section className="min-h-screen block items-center relative ">
 
         {/* Badge — slides down from top */}
         <div
-          className={`mb-16 ml-10 mt-6 transform transition-all duration-700 delay-[0ms] ${
+          className={`mb-16 ml-6 pt-24 transform transition-all duration-700 delay-[0ms] ${
             mounted ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"
           }`}
         >
@@ -69,9 +69,9 @@ const Home = () => {
             mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <div className="w-4/5 mx-auto">
+          <div className="lg:w-4/5 mx-auto">
             <div id="wrapper">
-              <h1 className="glitch text-center" data-text={headerData.headline}>
+              <h1 className="glitch text-center text-white relative text-[2em] lg:text-[3.5em] leading-none tracking-[0.1em]" data-text={headerData.headline}>
                 {headerData.headline}
               </h1>
             </div>
@@ -101,10 +101,10 @@ const Home = () => {
             mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <div className="flex flex-col sm:flex-row mt-5 gap-4 justify-center items-center">
+          <div className="flex text-sm lg:text-base flex-row mt-5 gap-2 lg:gap-4 justify-center items-center">
             <Link
               href="/work"
-              className="group border border-blue-600 bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
+              className="group border border-blue-600 bg-blue-600 px-2 lg:px-8 py-2 lg:py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
             >
               View My Work
               <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -113,7 +113,7 @@ const Home = () => {
             <button
               onClick={handleDownload}
               disabled={isDownloading}
-              className={`border-2 px-8 py-4 font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2 ${
+              className={`border-2 px-2 lg:px-8 py-2 lg:py-4 font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2 ${
                 isDownloading ? "border-white/10 cursor-not-allowed" : "border-white/10"
               }`}
             >
@@ -134,10 +134,10 @@ const Home = () => {
 
       {/* ─── WORKFLOW ─── */}
       <section className="py-16">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <h1 className="text-medium text-dark font-bold mb-3">MY WORKFLOW</h1>
          <div className="flex gap-2 hover:underline">
-           <p className="text-[13px] text-blue-300">Service</p>
+           <p className="text-xs lg:text-[13px] text-blue-300">Service</p>
             <BsArrowRight className="w-3 h-5 text-blue-300 group-hover:translate-x-1 transition-transform" />
          </div>
 
@@ -148,11 +148,11 @@ const Home = () => {
 
          
 
-        <div className="flex flex-col lg:flex-row gap-4 mt-6">
+        <div className="flex flex-col lg:flex-row gap-4 mt-6 items-center">
           {workflowSteps.map((step, i) => (
             <article
               key={step.step}
-              className="fle border border-gray-600/30 items-center m-auto p-4"
+              className="fle border border-white/15 items-center m-auto p-4"
             >
               <div className="flex items-center gap-3 mb-3">
                 
@@ -162,9 +162,9 @@ const Home = () => {
                    <span className="font-bold text-blue-800 text-sm leading-none">{step.step}</span>
                      </div>
 
-                <h3 className="font-extrabold uppercase">{step.title}</h3>
+                <h3 className=" uppercase">{step.title}</h3>
               </div>
-              <p className="text-white/50 text-[15px]">{step.description}</p>
+              <p className="text-white/50 text-sm lg:text-[15px]">{step.description}</p>
             </article>
           ))}
         </div>
@@ -178,7 +178,7 @@ const Home = () => {
 
       {/* ─── PASSION BLOCK ─── */}
       <section className="py-16">
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center text-center lg:text-left lg:gap-8">
           <img
             src={passionBlock.image}
             alt=""

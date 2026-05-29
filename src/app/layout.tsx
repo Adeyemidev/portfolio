@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${barlow.variable} font-inter`}>
+      <body className={`${inter.variable} ${barlow.variable} font-inter` }>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

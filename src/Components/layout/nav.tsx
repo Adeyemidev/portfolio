@@ -147,12 +147,12 @@ useEffect(() => {
             aria-hidden
           />
           <div
-            className={`fixed top-0 left-0 h-screen w-80 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-lg bg-black/30 border-r border-gray-600/30 shadow-xl ${
+            className={`fixed top-0 right-0 h-screen w-80 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-lg bg-black/30 border-r border-gray-600/30 shadow-xl ${
               isMenuOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
-            <div className="pt-4 px-6">
-              <div className="flex justify-start mb-6">
+            <div className="pt-4 px-3">
+              <div className="flex justify-end mb-6">
                 <button
                   onClick={closeMenu}
                   className="text-white hover:text-gray-300 transition-colors"
@@ -183,14 +183,14 @@ useEffect(() => {
                 </button>
               </div>
 
-              <div className="flex flex-col space-y-6">
+              <div className="flex flex-col space-y-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
                     onClick={closeMenu}
-                    className={`text-white/80 hover:text-white transition-colors text-xs ${
-                      isActive(item.href) ? "text-white" : ""
+                    className={` p-3 font-innertext hover:text-white transition-colors text-xs ${
+                      isActive(item.href) ? "text-blue-600 bg-white/10 " : "text-white"
                     }`}
                   >
                     {item.label}
