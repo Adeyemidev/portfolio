@@ -29,19 +29,18 @@ export default function About() {
   };
       
   return (
-    <section className="py-24 pt-28 ">
+    <section className="py-24 pt-28 container">
       {/* Two column layout: Image left, Content right */}
       <div className=" flex flex-col md:flex-row gap-12 items-center mx-auto">
 
         {/* Left — Photo */}
         
-          <div className="border border-white/10 overflow-hidden w-2/5">
+          <div className="border border-white/10 overflow-hidden lg:w-2/5">
             <img
-              src="/images/profile.png"
+              src="/images/profile1.png"
               alt="Adeyemi Ezekiel"
-              className="w-full h-screen rounded-t-2xl rounded-b-2xl object-cover object-top"
+              className="w-full lg:h-screen rounded-t-2xl rounded-b-2xl object-cover object-top"
             />
-
         </div>
 
         {/* Right — Content */}
@@ -76,9 +75,9 @@ export default function About() {
           <div className="flex flex-col sm:flex-row mt-10 gap-4">
             <Link
               href="/work"
-              className="group border bg-white px-8 py-4 font-medium text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center justify-center gap-2"
+              className="group bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center justify-center gap-2"
             >
-              View My Work
+              SEE MY WORK
               <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 

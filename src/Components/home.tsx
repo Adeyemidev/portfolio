@@ -71,7 +71,7 @@ const Home = () => {
         >
           <div className="lg:w-4/5 mx-auto">
             <div id="wrapper">
-              <h1 className="glitch text-center text-white relative text-[2em] lg:text-[3.5em] leading-none tracking-[0.1em]" data-text={headerData.headline}>
+              <h1 className="glitch text-center text-white relative text-[3em]  leading-[4rem] tracking-[0.1em]" data-text={headerData.headline}>
                 {headerData.headline}
               </h1>
             </div>
@@ -88,7 +88,7 @@ const Home = () => {
             <p
               key={index}
               style={{ opacity: "0.9" }}
-              className="text-sm md:text-[17px] text-slate-300 my-6 max-w-3xl leading-relaxed mx-auto text-center"
+              className="text-base text-slate-300 my-6 max-w-3xl leading-relaxed mx-auto text-center"
             >
               {paragraph}
             </p>
@@ -103,14 +103,14 @@ const Home = () => {
         >
           <div className="flex text-sm lg:text-base flex-row mt-5 gap-2 lg:gap-4 justify-center items-center">
             <Link
-              href="/work"
-              className="group border border-blue-600 bg-blue-600 px-2 lg:px-8 py-2 lg:py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
+              href="/contact"
+              className="group border border-blue-600 bg-blue-600 px-3 lg:px-8 py-3 text-base lg:py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
             >
-              View My Work
+                CONTACT
               <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <button
+            {/* <button
               onClick={handleDownload}
               disabled={isDownloading}
               className={`border-2 px-2 lg:px-8 py-2 lg:py-4 font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2 ${
@@ -124,7 +124,14 @@ const Home = () => {
                 </svg>
               )}
               {isDownloading ? "Downloading..." : "Download Resume"}
-            </button>
+            </button> */}
+
+            <Link
+              href="/work"
+              className="group border-2 border-white/20  px-3 lg:px-8 py-3 lg:py-4 font-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25  gap-2"
+            >
+                SEE MY WORK
+            </Link>
           </div>
         </div>
 
@@ -135,7 +142,7 @@ const Home = () => {
       {/* ─── WORKFLOW ─── */}
       <section className="py-16">
         <div className="flex justify-between items-center">
-          <h1 className="text-medium text-dark font-bold mb-3">MY WORKFLOW</h1>
+          <h1 className="text-small lg:text-medium font-bold mb-3">MY WORKFLOW</h1>
          <div className="flex gap-2 hover:underline">
            <p className="text-xs lg:text-[13px] text-blue-300">Service</p>
             <BsArrowRight className="w-3 h-5 text-blue-300 group-hover:translate-x-1 transition-transform" />
@@ -185,8 +192,8 @@ const Home = () => {
             className="rounded-full w-32 h-32 object-cover"
           />
           <div className="flex-1">
-            <h1 className="text-small font-bold mb-4">{passionBlock.title}</h1>
-            <p className="text-white/80 mb-6">{passionBlock.description}</p>
+            <h1 className="text-small lg:text-medium font-bold mb-4">{passionBlock.title}</h1>
+            <p className="text-white/80 mb-6 text-base">{passionBlock.description}</p>
             <Link
               href={passionBlock.ctaHref}
               className="border border-white/10 px-6 py-3 bg-blue-600 hover:bg-white/10 inline-block"

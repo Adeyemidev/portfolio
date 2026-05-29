@@ -93,7 +93,7 @@ export default function Works() {
       : projects.filter((p) => p.category.includes(active));
 
   return (
-    <section className=" py-16">
+    <section className=" py-16 container">
       {/* Header */}
       <h1 className="text-3xl font-black uppercase tracking-widest mb-2">
         MY WORKS

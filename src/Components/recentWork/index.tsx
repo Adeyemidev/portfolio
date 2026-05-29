@@ -33,7 +33,7 @@ export default function RecentWork() {
     <section className=" py-16">
       {/* Header */}
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-medium font-black uppercase tracking-widest">
+        <h2 className="text-small lg:text-medium font-bold uppercase">
           Recent Work
         </h2>
         <Link

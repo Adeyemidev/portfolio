@@ -89,7 +89,7 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section className="pt-[10rem]">
+    <section className="pt-[10rem] container">
       {/* Hero headline */}
       <h1 className="text-medium md:text-medium font-black uppercase text-center mb-8">
         BUILD FAST. SHIP CLEAN. CONVERT MORE.
@@ -119,7 +119,7 @@ export default function Services() {
         {services.map((service, i) => (
           <div
             key={i}
-            className="border border-white/10 bg-[#141414] p-7 flex flex-col justify-between gap-6"
+            className="border border-white/10 bg-[#141414] px-4 py-3 lg:p-7 flex flex-col justify-between gap-6"
           >
             <div>
               {service.subtitle && (
