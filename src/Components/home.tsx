@@ -104,7 +104,7 @@ const Home = () => {
           <div className="flex text-sm lg:text-base flex-row mt-5 gap-2 lg:gap-4 justify-center items-center">
             <Link
               href="/contact"
-              className="group border border-blue-600 bg-blue-600 px-3 lg:px-8 py-3 text-base lg:py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
+              className="group bg-blue-600 px-3 lg:px-8 py-3 text-base lg:py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 inline-flex items-center gap-2"
             >
                 CONTACT
               <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -128,7 +128,7 @@ const Home = () => {
 
             <Link
               href="/work"
-              className="group border-2 border-white/20  px-3 lg:px-8 py-3 lg:py-4 font-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25  gap-2"
+              className="group border border-white/40  px-3 lg:px-8 py-3 lg:py-4 font-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25  gap-2"
             >
                 SEE MY WORK
             </Link>
@@ -171,7 +171,7 @@ const Home = () => {
 
                 <h3 className=" uppercase">{step.title}</h3>
               </div>
-              <p className="text-white/50 text-sm lg:text-[15px]">{step.description}</p>
+              <p className="text-white/40 text-sm lg:text-[15px]">{step.description}</p>
             </article>
           ))}
         </div>
@@ -196,7 +196,7 @@ const Home = () => {
             <p className="text-white/80 mb-6 text-base">{passionBlock.description}</p>
             <Link
               href={passionBlock.ctaHref}
-              className="border border-white/10 px-6 py-3 bg-blue-600 hover:bg-white/10 inline-block"
+              className="border border-white/40 px-6 py-3 bg-blue-600 hover:bg-white/10 inline-block"
             >
               {passionBlock.ctaLabel}
             </Link>

@@ -43,7 +43,7 @@ export default function RecentWork() {
           View all
         </Link>
       </div>
-      <p className="text-white/50 text-sm mb-10">
+      <p className="text-white/40 text-sm mb-10">
         Fast, clean, and conversion-focused frontend builds.
       </p>
 
@@ -52,7 +52,7 @@ export default function RecentWork() {
         {projects.map((project, i) => (
           <div
             key={i}
-            className={`relative overflow-hidden rounded-lg border border-white/10 group cursor-pointer ${
+            className={`relative overflow-hidden rounded-lg border border-white/40 group cursor-pointer ${
               i % 2 === 0 ? "col-span-2" : "col-span-1"
             }`}
           >
@@ -77,7 +77,7 @@ export default function RecentWork() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs border border-white/20 px-2 py-0.5 rounded-full text-white/50"
+                    className="text-xs border border-white/20 px-2 py-0.5 rounded-full text-white/40"
                   >
                     {tag}
                   </span>

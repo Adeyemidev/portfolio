@@ -93,7 +93,7 @@ export default function Testimonials() {
     <section className=" py-16 overflow-hidden ">
       {/* Header */}
       <h1 className="text-medium font-bold">WHAT CLIENTS SAY</h1>
-        <p className="my-3 text-white/50 text-sm ">Results, reliability, and a smooth process.</p>
+        <p className="my-3 text-white/40 text-sm ">Results, reliability, and a smooth process.</p>
 
       {/* Scrolling track */}
       <div className="overflow-hidden">
@@ -101,7 +101,7 @@ export default function Testimonials() {
           {allTestimonials.map((t, i) => (
             <div
               key={i}
-              className="w-[340px] flex-shrink-0 rounded-lg border border-white/10 bg-[#141414] rounded-sm p-6 flex flex-col justify-between"
+              className="w-[340px] flex-shrink-0 rounded-lg border border-white/40 bg-[#141414] rounded-sm p-6 flex flex-col justify-between"
             >
               <p className="text-sm text-white/80 leading-relaxed mb-6">
                 &ldquo;{t.quote}&rdquo;

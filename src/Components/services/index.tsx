@@ -89,14 +89,14 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section className="pt-[10rem] container">
+    <section className="pt-[9rem] container">
       {/* Hero headline */}
       <h1 className="text-medium md:text-medium font-black uppercase text-center mb-8">
         BUILD FAST. SHIP CLEAN. CONVERT MORE.
       </h1>
 
       {/* Filter tags */}
-      <div className="flex flex-wrap justify-center gap-3 mb-14">
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
         {[
           "Frontend Development",
           "UI/UX Implementation",
@@ -119,7 +119,7 @@ export default function Services() {
         {services.map((service, i) => (
           <div
             key={i}
-            className="border border-white/10 bg-[#141414] px-4 py-3 lg:p-7 flex flex-col justify-between gap-6"
+            className="border border-white/40 bg-[#141414] px-4 py-3 lg:p-7 flex flex-col justify-between gap-6"
           >
             <div>
               {service.subtitle && (
@@ -142,7 +142,7 @@ export default function Services() {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs border border-white/15 px-3 py-1 text-white/50"
+                    className="text-xs border border-white/15 px-3 py-1 text-white/40"
                   >
                     {tag}
                   </span>
@@ -162,12 +162,12 @@ export default function Services() {
       </div>
 
       {/* Bottom CTA Banner */}
-      <div className="border border-white/10 bg-[#141414] px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 rounded-sm">
+      <div className="border border-white/40 bg-[#141414] px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 rounded-sm">
         <div>
           <h3 className="text-xl font-black uppercase tracking-wide mb-1">
             READY TO BUILD SOMETHING?
           </h3>
-          <p className="text-sm text-white/50">
+          <p className="text-sm text-white/40">
             Tell me your goal and I'll propose the fastest, cleanest path.
           </p>
         </div>

@@ -93,12 +93,12 @@ export default function Works() {
       : projects.filter((p) => p.category.includes(active));
 
   return (
-    <section className=" py-16 container">
+    <section className=" pt-[9rem] container">
       {/* Header */}
       <h1 className="text-3xl font-black uppercase tracking-widest mb-2">
         MY WORKS
       </h1>
-      <p className="text-white/50 text-sm mb-10">
+      <p className="text-white/40 text-sm mb-10">
         Fast, clean, and conversion-focused frontend builds.
       </p>
 
@@ -106,7 +106,7 @@ export default function Works() {
       <div className="flex flex-col md:flex-row gap-8">
         {/* Filter Sidebar */}
         <div className="w-full md:w-[220px] flex-shrink-0">
-          <div className="border border-white/10 bg-[#141414] p-5">
+          <div className="border border-white/40 bg-[#141414] p-5">
             <p className="text-xs font-bold uppercase tracking-widest mb-4 text-white/60">
               Filter
             </p>
@@ -138,7 +138,7 @@ export default function Works() {
           {filtered.map((project, i) => (
             <div
               key={i}
-              className="flex flex-col md:flex-row border border-white/10 bg-[#141414] overflow-hidden group"
+              className="flex flex-col md:flex-row border border-white/40 bg-[#141414] overflow-hidden group"
             >
               {/* Image */}
               <div className="w-full md:w-[380px] h-[220px] flex-shrink-0 overflow-hidden">
@@ -155,14 +155,14 @@ export default function Works() {
                   <h2 className="text-base font-black uppercase tracking-wide mb-2">
                     {project.title}
                   </h2>
-                  <p className="text-sm text-white/50 leading-relaxed mb-4">
+                  <p className="text-sm text-white/40 leading-relaxed mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs border border-white/10 px-3 py-0.5 rounded-full text-white/50"
+                        className="text-xs border border-white/40 px-3 py-0.5 rounded-full text-white/40"
                       >
                         {tag}
                       </span>

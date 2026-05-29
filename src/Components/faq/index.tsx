@@ -51,7 +51,7 @@ export default function FAQ() {
           return (
             <div
               key={index}
-              className="border border-white/10 rounded-sm bg-[#141414] overflow-hidden"
+              className="border border-white/40 rounded-sm bg-[#141414] overflow-hidden"
             >
               <button
                 onClick={() => toggle(index)}

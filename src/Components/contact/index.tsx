@@ -57,11 +57,11 @@ const Contact = () => {
 
   const inputClass = (hasError: boolean) =>
     `w-full bg-[#1a1a1a] border ${
-      hasError ? "border-red-500" : "border-white/10 focus:border-blue-500"
+      hasError ? "border-red-500" : "border-white/40 focus:border-blue-500"
     } px-4 py-3 text-white placeholder-white/30 text-sm transition-colors duration-300 focus:outline-none`;
 
   return (
-    <section className="bg-[#0d0d0d] text-white px-8 md:px-16 py-20">
+    <section className="bg-[#0d0d0d] text-white px-8 md:px-16 pt-[9rem] ">
       <div
         ref={ref}
         className={`max-w-3xl transform transition-all duration-700 ${
@@ -72,7 +72,7 @@ const Contact = () => {
         <h1 className="text-4xl md:text-5xl font-black uppercase tracking-wide mb-3">
           GET IN TOUCH
         </h1>
-        <p className="text-white/50 text-sm mb-10">
+        <p className="text-white/40 text-sm mb-10">
           Got a project or a quick question? Send me a message and I'll reply in no time.
         </p>
 

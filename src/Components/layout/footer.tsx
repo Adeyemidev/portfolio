@@ -80,7 +80,7 @@ export default function Footer() {
             key={label}
             href={href}
             aria-label={label}
-            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:border-white/15 hover:text-white transition-all"
+            className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white/60 hover:border-white/15 hover:text-white transition-all"
           >
             {icon}
           </a>
@@ -88,7 +88,7 @@ export default function Footer() {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-white/10 mx-0 mb-4" />
+      <div className="border-t border-white/40 mx-0 mb-4" />
 
       {/* Copyright */}
       <p className="text-center text-white/40 text-xs tracking-wide pb-4">
