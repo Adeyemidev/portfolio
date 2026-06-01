@@ -29,7 +29,7 @@ export default function About() {
   // };
       
   return (
-    <section className="pt-[9rem] container">
+    <section className="pt-[8rem] container">
       {/* Two column layout: Image left, Content right */}
       <div className=" flex flex-col md:flex-row gap-12 items-center mx-auto">
 

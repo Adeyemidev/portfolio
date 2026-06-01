@@ -89,7 +89,7 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section className="pt-[9rem] container">
+    <section className="pt-[8rem] container">
       {/* Hero headline */}
       <h1 className="text-medium font-black uppercase text-center mb-8">
         BUILD FAST. SHIP CLEAN. CONVERT MORE.

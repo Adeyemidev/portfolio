@@ -36,112 +36,63 @@ useEffect(() => {
 }, []);
   return (
     <>
-    <nav className={`fixed top-0  w-full z-30 transform transition-all duration-700  ${
+
+<nav className={`fixed top-0 w-full z-30 transform transition-all duration-700 ${
   mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
 }`}>
-     
-        <div className="backdrop-blur-md  shadow-md ">
-          <div className="flex w-full items-center justify-between container border-b border-white/40 py-4">
-            <Link href="/" className="shrink-0 pl-0">
-                <img src="/images/logo.svg" alt="Logo" className="h-8 w-auto block" />
-              </Link>
-            <div className="flex items-center gap-8 min-w-0">
+  <div className="backdrop-blur-md shadow-md border-b border-white/15">
+    <div className="container mx-auto flex items-center justify-between px-4 py-4">
+      
+      {/* Logo */}
+      <Link href="/" className="shrink-0">
+        <img src="/images/logo.svg" alt="Logo" className="h-8 w-auto block" />
+      </Link>
 
-              <div className="hidden md:flex space-x-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={`text-slate-300 hover:text-white transition-colors relative group text-sm ${
-                      isActive(item.href) ? "text-white" : ""
-                    }`}
-                  >
-                    {item.label}
-                    <span
-                      className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 ${
-                        isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    />
-                  </Link>
-                ))}
-              </div>
-            </div>
+      {/* Nav links */}
+      <div className="hidden md:flex space-x-8">
+        {navItems.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className={`text-slate-300 hover:text-white transition-colors relative group text-sm ${
+              isActive(item.href) ? "text-white" : ""
+            }`}
+          >
+            {item.label}
+            <span
+              className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 ${
+                isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+              }`}
+            />
+          </Link>
+        ))}
+      </div>
 
-            <div className="flex items-center gap-4 shrink-0">
-                <Link
-                  href="/contact"
-                  className="text-sm  hidden lg:block  px-4 py-2 bg-blue-600 transition-colors"
-                >
-                  CONTACT
-                </Link>
-                <button
-                  className="lg:hidden text-white transition-transform duration-300 ease-in-out z-50 relative"
-                  onClick={toggleMenu}
-                  aria-label="Toggle menu"
-                  style={{
-                    transform: isMenuOpen ? "rotate(90deg)" : "rotate(0deg)",
-                  }}
-                >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transition-all duration-300"
-                  >
-                    {/* {!isMenuOpen ? ( */}
-                      <>
-                        <path
-                          d="M3 12H21"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M3 6H21"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M3 18H21"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </>
-                    {/* // )
-                    //  : (
-                    //   <>
-                    //     <path */}
-                    {/* //       d="M18 6L6 18"
-                    //       stroke="currentColor"
-                    //       strokeWidth="2"
-                    //       strokeLinecap="round"
-                    //       strokeLinejoin="round"
-                    //     />
-                    //     <path
-                    //       d="M6 6L18 18"
-                    //       stroke="currentColor"
-                    //       strokeWidth="2"
-                    //       strokeLinecap="round"
-                    //       strokeLinejoin="round"
-                    //     />
-                    //   </>
-                    // )
-                    // } */}
-                  </svg>
-                </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Right side */}
+      <div className="flex items-center gap-4 shrink-0">
+        <Link
+          href="/contact"
+          className="text-sm hidden lg:block px-4 py-2 bg-blue-600 transition-colors"
+        >
+          CONTACT
+        </Link>
+        <button
+          className="lg:hidden text-white transition-transform duration-300 ease-in-out z-50 relative"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          style={{ transform: isMenuOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3 6H21"  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
 
-
+    </div>
+  </div>
+</nav>
 
 
 {/* Backdrop */}

@@ -71,7 +71,7 @@ const Home = () => {
         >
           <div className="lg:w-4/5 mx-auto">
             <div id="wrapper">
-              <h1 className="glitch text-center text-white relative text-[2em] lg:text-[3em]  leading-[4rem] lg:tracking-[0.1em]" data-text={headerData.headline}>
+              <h1 className="glitch text-center text-white relative text-[2em] lg:text-[3em]  lg:leading-[4rem] lg:tracking-[0.1em]" data-text={headerData.headline}>
                 {headerData.headline}
               </h1>
             </div>
@@ -136,7 +136,7 @@ const Home = () => {
         </div>
 
         {/* Bounce arrow */}
-        <ChevronDown className="absolute -bottom-10 lg:-bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
+        <ChevronDown className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
       </section>
 
       {/* ─── WORKFLOW ─── */}
@@ -207,7 +207,7 @@ const Home = () => {
       {/* ─── FAQ ─── */}
       <FAQ />
     </>
-  );
+  )
 };
 
 export default Home;

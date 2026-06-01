@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import useIntersectionObserver from "@/hook";
+import { toast } from "react-toastify";
 
 interface FormData {
   Name: string;
@@ -42,18 +43,24 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
       if (response.ok) {
-        alert("Thank you! Your message has been sent.");
+        toast("Thank you! Your message has been sent.");
         reset();
       } else {
-        alert("Failed to send message. Please try again.");
+        toast("Failed to send message. Please try again.");
       }
     } catch (error) {
-      alert("Sorry, there was an error. Please try again.");
+      toast("Sorry, there was an error. Please try again.");
       console.error("Form submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
+
+
+
+   
+
+
 
   const inputClass = (hasError: boolean) =>
     `w-full bg-[#1a1a1a] border ${
@@ -61,7 +68,7 @@ const Contact = () => {
     } px-4 py-3 text-white placeholder-white/30 text-sm transition-colors duration-300 focus:outline-none`;
 
   return (
-    <section className="bg-[#0d0d0d] text-white px-8 md:px-16 pt-[9rem] ">
+    <section className="text-white px-8 md:px-16 pt-[8rem] flex justify-center ">
       <div
         ref={ref}
         className={`max-w-3xl transform transition-all duration-700 ${

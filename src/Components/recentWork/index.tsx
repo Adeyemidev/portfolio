@@ -53,14 +53,14 @@ export default function RecentWork() {
           <div
             key={i}
             className={`relative overflow-hidden rounded-lg border border-white/40 group cursor-pointer ${
-              i % 2 === 0 ? "col-span-2" : "col-span-1"
+              i % 2 === 0 ? "lg:col-span-2" : "lg:col-span-1"
             }`}
           >
             {/* Project Image */}
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-[300px] lg:h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-95"
+              className="w-full h-[300px] lg:h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
 
             {/* Overlay */}

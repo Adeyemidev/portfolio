@@ -75,7 +75,7 @@ const projects: Project[] = [
     title: "Designo - Agency Website",
     description:
       "A multi-page design agency website with contact form, location pages, and clean brand identity presentation.",
-    image: "/images/designo.png",
+    image: "/images/Designo.png",
     tags: ["React", "CSS", "JavaScript"],
     href: "https://designo-ade.netlify.app/",
     category: ["React", "Custom"],
@@ -93,7 +93,7 @@ export default function Works() {
       : projects.filter((p) => p.category.includes(active));
 
   return (
-    <section className=" pt-[4rem] container">
+    <section className=" pt-[3rem] container">
       {/* Header */}
       <h1 className="text-medium font-black uppercase mb-2">
         MY WORKS
@@ -150,7 +150,7 @@ export default function Works() {
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col justify-between gap-4">
+              <div className="p-4 lg:p-6 flex flex-col justify-between gap-4">
                 <div>
                   <h2 className="text-base font-black uppercase tracking-wide mb-2">
                     {project.title}

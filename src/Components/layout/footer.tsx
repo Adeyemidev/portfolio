@@ -58,7 +58,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="text-white pt-16 pb-0 relative overflow-hidden">
+    <footer className="text-white pt-24 pb-0 relative overflow-hidden">
       <div className="container">
       {/* Nav Links */}
       <div className="flex justify-center flex-wrap gap-6 mb-8 text-xs font-bold  uppercase">
@@ -80,7 +80,7 @@ export default function Footer() {
             key={label}
             href={href}
             aria-label={label}
-            className="w-10 h-10 rounded-full  border border-white/40 flex items-center justify-center text-white/60 hover:border-white/15 hover:text-white transition-all"
+            className="w-10 h-10 rounded-full  border border-white/10 flex items-center justify-center text-white/60 hover:border-white/15 hover:text-white transition-all"
           >
             {icon}
           </a>
