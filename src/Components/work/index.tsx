@@ -55,7 +55,7 @@ const projects: Project[] = [
     title: "GCMS - Canadian Immigration Case Management",
     description:
       "A professional case management platform for a Canadian immigration firm. Built a responsive multi-page platform with structured intake flow, service pages, and a client-facing portal.",
-    image: "/images/gcms.png",
+    image: "/images/GCMS.png",
     tags: ["Next.js", "ExpressJS", "Tailwind CSS", "Styled Components"],
     href: "https://mummyserena.netlify.app/",
     category: ["Nextjs", "Custom"],
@@ -93,9 +93,9 @@ export default function Works() {
       : projects.filter((p) => p.category.includes(active));
 
   return (
-    <section className=" pt-[9rem] container">
+    <section className=" pt-[4rem] container">
       {/* Header */}
-      <h1 className="text-3xl font-black uppercase tracking-widest mb-2">
+      <h1 className="text-medium font-black uppercase mb-2">
         MY WORKS
       </h1>
       <p className="text-white/40 text-sm mb-10">
@@ -106,7 +106,7 @@ export default function Works() {
       <div className="flex flex-col md:flex-row gap-8">
         {/* Filter Sidebar */}
         <div className="w-full md:w-[220px] flex-shrink-0">
-          <div className="border border-white/40 bg-[#141414] p-5">
+          <div className="border border-white/40 bg-[#141414] rounded-xl p-3.5">
             <p className="text-xs font-bold uppercase tracking-widest mb-4 text-white/60">
               Filter
             </p>
@@ -138,7 +138,7 @@ export default function Works() {
           {filtered.map((project, i) => (
             <div
               key={i}
-              className="flex flex-col md:flex-row border border-white/40 bg-[#141414] overflow-hidden group"
+              className="flex flex-col md:flex-row border border-white/40 bg-[#141414] rounded-xl overflow-hidden group"
             >
               {/* Image */}
               <div className="w-full md:w-[380px] h-[220px] flex-shrink-0 overflow-hidden">

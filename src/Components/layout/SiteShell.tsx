@@ -15,5 +15,5 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       <ToastContainer />
       <Footer/>
     </div>
-  );
+  )
 }

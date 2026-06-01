@@ -90,7 +90,7 @@ useEffect(() => {
                     xmlns="http://www.w3.org/2000/svg"
                     className="transition-all duration-300"
                   >
-                    {!isMenuOpen ? (
+                    {/* {!isMenuOpen ? ( */}
                       <>
                         <path
                           d="M3 12H21"
@@ -114,24 +114,26 @@ useEffect(() => {
                           strokeLinejoin="round"
                         />
                       </>
-                    ) : (
-                      <>
-                        <path
-                          d="M18 6L6 18"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M6 6L18 18"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </>
-                    )}
+                    {/* // )
+                    //  : (
+                    //   <>
+                    //     <path */}
+                    {/* //       d="M18 6L6 18"
+                    //       stroke="currentColor"
+                    //       strokeWidth="2"
+                    //       strokeLinecap="round"
+                    //       strokeLinejoin="round"
+                    //     />
+                    //     <path
+                    //       d="M6 6L18 18"
+                    //       stroke="currentColor"
+                    //       strokeWidth="2"
+                    //       strokeLinecap="round"
+                    //       strokeLinejoin="round"
+                    //     />
+                    //   </>
+                    // )
+                    // } */}
                   </svg>
                 </button>
             </div>
@@ -139,18 +141,37 @@ useEffect(() => {
         </div>
       </nav>
 
+
+
+
+{/* Backdrop */}
+
+
+
+
+
+
+
+{/* 
       {isMenuOpen && (
-        <>
+        <> */}
+      
           <div
-            className="fixed inset-0 z-40 lg:hidden"
-            onClick={closeMenu}
-            aria-hidden
-          />
-          <div
-            className={`fixed top-0 right-0 h-screen w-80 z-50 lg:hidden transform transition-transform duration-300 ease-in-out backdrop-blur-lg bg-black/30 border-r border-gray-600/30 shadow-xl ${
-              isMenuOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
-          >
+  className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-500 ease-in-out ${
+    isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+  }`}
+  onClick={closeMenu}
+  aria-hidden
+/>
+
+{/* Sidebar — always mounted, slide via transform */}
+<div
+  className={`fixed top-0 right-0 h-screen w-80 z-50 lg:hidden transform transition-transform duration-500 ease-in-out backdrop-blur-lg bg-black/30 border-r border-gray-600/30 shadow-xl ${
+    isMenuOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
+
+
             <div className="pt-4 px-3">
               <div className="flex justify-end mb-6">
                 <button
@@ -200,14 +221,22 @@ useEffect(() => {
 
               <div className="flex space-x-4 items-center mt-8 pt-6 border-t border-white/30">
               <button
+
                  type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold py-2.5 text-sm tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-             > Contact </button>
+             > 
+             
+                <Link href='/contact'>
+
+                 Contact 
+                          </Link>
+
+             </button>
+
               </div>
             </div>
           </div>
         </>
       )}
-    </>
-  );
-}
+  //   </>
+  // );

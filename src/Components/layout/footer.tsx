@@ -59,9 +59,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="text-white pt-16 pb-0 relative overflow-hidden">
-      <div >
+      <div className="container">
       {/* Nav Links */}
-      <div className="flex justify-center flex-wrap gap-6 mb-8 text-xs font-bold tracking-widest uppercase">
+      <div className="flex justify-center flex-wrap gap-6 mb-8 text-xs font-bold  uppercase">
         {navLinks.map(({ label, href }) => (
           <Link
             key={label}
@@ -74,13 +74,13 @@ export default function Footer() {
       </div>
 
       {/* Social Icons */}
-      <div className="flex justify-center gap-4 mb-4">
+      <div className="flex justify-center gap-4 mb-4 ">
         {socialLinks.map(({ label, href, icon }) => (
           <a
             key={label}
             href={href}
             aria-label={label}
-            className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white/60 hover:border-white/15 hover:text-white transition-all"
+            className="w-10 h-10 rounded-full  border border-white/40 flex items-center justify-center text-white/60 hover:border-white/15 hover:text-white transition-all"
           >
             {icon}
           </a>
@@ -88,7 +88,7 @@ export default function Footer() {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-white/40 mx-0 mb-4" />
+      <div className="border-t border-white/40 mx-0 mb-4 " />
 
       {/* Copyright */}
       <p className="text-center text-white/40 text-xs tracking-wide pb-4">
@@ -98,7 +98,7 @@ export default function Footer() {
 
       {/* Big watermark text */}
       <div
-        className="w-full text-center select-none pointer-events-none leading-none pt-20 -mb-16"
+        className="w-full text-center select-none pointer-events-none leading-none pt-20 -mb-16 flex justify-center"
         style={{
           fontSize: "clamp(100px, 52vw, 190px)",
           fontWeight: 900,

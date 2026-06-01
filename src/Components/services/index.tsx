@@ -91,7 +91,7 @@ export default function Services() {
   return (
     <section className="pt-[9rem] container">
       {/* Hero headline */}
-      <h1 className="text-medium md:text-medium font-black uppercase text-center mb-8">
+      <h1 className="text-medium font-black uppercase text-center mb-8">
         BUILD FAST. SHIP CLEAN. CONVERT MORE.
       </h1>
 
@@ -119,9 +119,9 @@ export default function Services() {
         {services.map((service, i) => (
           <div
             key={i}
-            className="border border-white/40 bg-[#141414] px-4 py-3 lg:p-7 flex flex-col justify-between gap-6"
+            className="border border-white/40 bg-[#141414] rounded-xl  px-4 py-3 lg:p-7 flex flex-col justify-between gap-6"
           >
-            <div>
+            <div >
               {service.subtitle && (
                 <p className="text-xs text-blue-400 uppercase tracking-widest mb-2">
                   {service.subtitle}

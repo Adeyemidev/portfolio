@@ -40,7 +40,7 @@ export default function FAQ() {
   return (
     <section className=" py-16">
       {/* Title */}
-      <h2 className="text-medium font-black uppercase tracking-widest mb-8">
+      <h2 className="text-medium font-black uppercase mb-8">
         FAQs
       </h2>
 
@@ -62,7 +62,7 @@ export default function FAQ() {
                 </span>
                 <span
                   className={`text-sm font-semibold ${
-                    isOpen ? "text-blue-400" : "text-white"
+                    isOpen ? "text-white" : "text-white"
                   }`}
                 >
                   {faq.question}

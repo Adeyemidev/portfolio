@@ -64,8 +64,8 @@ export default function RecentWork() {
             />
 
             {/* Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <h3 className="text-small font-black uppercase tracking-wide mb-1">
+            <div className="absolute bottom-0 left-0 right-0 p-3 lg:p-5 backdrop-blur-lg bg-black/30">
+              <h3 className="text-sm lg:text-smaller font-black uppercase tracking-wide mb-1">
                 {project.title}
               </h3>
               <p className="text-sm text-white/80 mb-3 line-clamp-2">

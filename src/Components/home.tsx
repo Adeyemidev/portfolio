@@ -71,7 +71,7 @@ const Home = () => {
         >
           <div className="lg:w-4/5 mx-auto">
             <div id="wrapper">
-              <h1 className="glitch text-center text-white relative text-[3em]  leading-[4rem] tracking-[0.1em]" data-text={headerData.headline}>
+              <h1 className="glitch text-center text-white relative text-[2em] lg:text-[3em]  leading-[4rem] lg:tracking-[0.1em]" data-text={headerData.headline}>
                 {headerData.headline}
               </h1>
             </div>
