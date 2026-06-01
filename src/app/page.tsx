@@ -7,6 +7,6 @@ export const metadata: Metadata = {
 };
 export default function HomePage() {
   return <div className="container">
-           <Home />;
+           <Home />
           </div> 
 }
