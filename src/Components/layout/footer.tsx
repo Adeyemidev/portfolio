@@ -98,7 +98,7 @@ export default function Footer() {
 
       {/* Big watermark text */}
       <div
-        className="w-full text-center select-none pointer-events-none leading-none pt-20 -mb-10 lg:-mb-16 flex justify-center"
+        className="w-full text-center select-none pointer-events-none leading-none pt-20 -mb-4 lg:-mb-16 flex justify-center"
         style={{
           fontSize: "clamp(100px, 2vw, 190px)",
           fontWeight: 900,

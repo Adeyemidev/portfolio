@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="lg:min-h-screen block items-center relative ">
+      <section className="min-h-screen block items-center relative ">
 
         {/* Badge — slides down from top */}
         <div
@@ -120,7 +120,7 @@ const Home = () => {
         </div>
 
         {/* Bounce arrow */}
-        <ChevronDown className="absolute -bottom-10 lg:-bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
+        <ChevronDown className="absolute -bottom-24 lg:-bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
       </section>
 
       {/* ─── WORKFLOW ─── */}
@@ -143,7 +143,7 @@ const Home = () => {
           {workflowSteps.map((step, i) => (
             <article
               key={step.step}
-              className="fle border border-white/15 items-center m-auto p-4"
+              className="fle border border-white/20 rounded-xl items-center m-auto p-4"
             >
               <div className="flex items-center gap-3 mb-3">
                 
@@ -155,7 +155,7 @@ const Home = () => {
 
                 <h3 className=" uppercase">{step.title}</h3>
               </div>
-              <p className="text-white/80 text-sm lg:text-[15px]">{step.description}</p>
+              <p className="text-white/70 text-sm lg:text-[15px]">{step.description}</p>
             </article>
           ))}
         </div>
