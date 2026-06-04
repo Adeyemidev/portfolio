@@ -127,7 +127,7 @@ const Home = () => {
       </section>
 
       {/* ─── WORKFLOW ─── */}
-      <section className="py-16">
+      <section className="mt-10 lg:mt-0 py-16">
         <div className="flex justify-between items-center">
           <h1 className="text-small lg:text-medium font-bold mb-3">MY WORKFLOW</h1>
          <div className="flex gap-2 hover:underline">
