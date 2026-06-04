@@ -43,7 +43,7 @@ export default function RecentWork() {
           View all
         </Link>
       </div>
-      <p className="text-white/40 text-sm mb-10">
+      <p className="text-white/80 text-sm mb-10">
         Fast, clean, and conversion-focused frontend builds.
       </p>
 

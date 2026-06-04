@@ -93,7 +93,7 @@ export default function Testimonials() {
     <section className=" py-16 overflow-hidden ">
       {/* Header */}
       <h1 className="text-medium font-bold">WHAT CLIENTS SAY</h1>
-        <p className="my-3 text-white/40 text-sm ">Results, reliability, and a smooth process.</p>
+        <p className="my-3 text-white/80 text-sm ">Results, reliability, and a smooth process.</p>
 
       {/* Scrolling track */}
       <div className="overflow-hidden">

@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="min-h-screen block items-center relative ">
+      <section className="lg:min-h-screen block items-center relative ">
 
         {/* Badge — slides down from top */}
         <div
@@ -88,7 +88,7 @@ const Home = () => {
             <p
               key={index}
               style={{ opacity: "0.9" }}
-              className="text-base text-slate-300 my-6 max-w-3xl leading-relaxed mx-auto text-center"
+              className="text-base text-white/80 my-6 max-w-3xl leading-relaxed mx-auto text-center"
             >
               {paragraph}
             </p>
@@ -110,22 +110,6 @@ const Home = () => {
               <BsArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            {/* <button
-              onClick={handleDownload}
-              disabled={isDownloading}
-              className={`border-2 px-2 lg:px-8 py-2 lg:py-4 font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2 ${
-                isDownloading ? "border-white/10 cursor-not-allowed" : "border-white/10"
-              }`}
-            >
-              {isDownloading && (
-                <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                </svg>
-              )}
-              {isDownloading ? "Downloading..." : "Download Resume"}
-            </button> */}
-
             <Link
               href="/work"
               className="group border border-white/40  px-3 lg:px-8 py-3 lg:py-4 font-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25  gap-2"
@@ -136,7 +120,7 @@ const Home = () => {
         </div>
 
         {/* Bounce arrow */}
-        <ChevronDown className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
+        <ChevronDown className="absolute -bottom-10 lg:-bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
       </section>
 
       {/* ─── WORKFLOW ─── */}
@@ -171,7 +155,7 @@ const Home = () => {
 
                 <h3 className=" uppercase">{step.title}</h3>
               </div>
-              <p className="text-white/40 text-sm lg:text-[15px]">{step.description}</p>
+              <p className="text-white/80 text-sm lg:text-[15px]">{step.description}</p>
             </article>
           ))}
         </div>
@@ -196,7 +180,7 @@ const Home = () => {
             <p className="text-white/80 mb-6 text-base">{passionBlock.description}</p>
             <Link
               href={passionBlock.ctaHref}
-              className="border border-white/40 px-6 py-3 bg-blue-600 hover:bg-white/10 inline-block"
+              className="px-6 py-3 bg-blue-600 hover:bg-white/10 inline-block"
             >
               {passionBlock.ctaLabel}
             </Link>
