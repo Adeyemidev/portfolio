@@ -47,7 +47,10 @@ const Home = () => {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="min-h-screen block items-center relative ">
+      <section className="lg:min-h-screen block items-center relative 
+      
+      
+      flex lg:block flex-col justify-center">
 
         {/* Badge — slides down from top */}
         <div
@@ -120,7 +123,7 @@ const Home = () => {
         </div>
 
         {/* Bounce arrow */}
-        <ChevronDown className="absolute -bottom-24 lg:-bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
+        <ChevronDown className="absolute -bottom-16 lg:-bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 text-slate-400 animate-bounce" />
       </section>
 
       {/* ─── WORKFLOW ─── */}
