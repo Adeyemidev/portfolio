@@ -214,6 +214,14 @@ export const skillsData: SkillCategory[] = [
 ======================= */
 
 export const projects: Project[] = [
+
+  {
+    id: "Gmatt Gadget Store | Laptops, Phones & Accessories",
+    title: "Gmatt - E-commerce Gadget  Store ",
+    image: "/images/gmatt.png",
+    link: "https://gmatt-technology.vercel.app/",
+    tags: ["NextJS", "TypeScript", "TailwindCss", "Supabase"],
+  },
   {
     id: "Ambaqual Fashion Design - Ecommerce Website",
     title: "Ambaqual Fashion Design - Ecommerce Website",
@@ -222,26 +230,27 @@ export const projects: Project[] = [
     tags: ["Wordpress", "Css", "Elementor + Woocommerce"],
   },
   {
-    id: "SwiftPass",
-    title: "SwiftPass Website",
-    image: "/images/swiftpass.png",
-    link: "https://swift-pass-customer-web.vercel.app",
-    tags: ["NEXTJS", "TYPESCRIPT", "SHADCN + TAILWINDCSS"],
-  },
-  {
     id: "kovio",
     title: "Kovio Event Marketplace",
     image: "/images/kovio.png",
     link: "https://www.kovio.co",
     tags: ["TYPESCRIPT", "NEXTJS", "TAILWINDCSS"],
   },
-  {
+   {
     id: "gcms",
     title: "GCMS Website",
     image: "/images/GCMS.png",
     link: "https://mummyserena.netlify.app/",
     tags: ["REACTJS", "Styled Component", "TailwindCSS", "EXPRESSJS"],
   },
+  {
+    id: "SwiftPass",
+    title: "SwiftPass Website",
+    image: "/images/swiftpass.png",
+    link: "https://swift-pass-customer-web.vercel.app",
+    tags: ["NEXTJS", "TYPESCRIPT", "SHADCN + TAILWINDCSS"],
+  },
+ 
   {
     id: "crowdlaunch",
     title: "CROWDLAUNCH",
