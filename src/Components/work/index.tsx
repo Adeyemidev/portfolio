@@ -15,6 +15,16 @@ interface Project {
 }
 
 const projects: Project[] = [
+{
+    title: "Gmatt Gadget Store | Laptops, Phones & Accessories",
+    description: "Gmatt Gadget Store is focused on quality laptops, smartphones, and essential accessories for everyday productivity and lifestyle. Their goal is to make it easy to discover the right gadget and order conveniently with fast and friendly support.",
+    href: "https://gmatt-technology.vercel.app/",
+    image: "/images/gmatt.png",
+
+    tags: ["NextJS", "TypeScript", "TailwindCss", "Supabase"],
+    category: ["Nextjs", "React"],
+
+  },
   {
     title: "KOVIO - Event Planning Marketplace",
     description:
